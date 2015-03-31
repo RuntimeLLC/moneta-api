@@ -1,7 +1,4 @@
-require "moneta/api/version"
+require 'moneta/api/version'
+require 'savon'
 
-module Moneta
-  module Api
-    # Your code goes here...
-  end
-end
+require 'moneta/api/service'
