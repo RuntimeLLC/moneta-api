@@ -1,18 +1,14 @@
 module Moneta
   module Api
     class Service
+      include ServiceMethods
+      attr_reader :client
+
       def initialize(username, password, params = {})
         @client = Savon.client(prepare_params(username, password, params))
       end
 
-      def find_account_by_id(id)
-        response = @client.call(:find_account_by_id, { message: id })
-        ResponseFactory.build(response)
-      end
-
       private
-
-      attr_reader :client
 
       def prepare_params(username, password, params)
         { wsdl: 'https://demo.moneta.ru/services.wsdl', wsse_auth: [ username, password ] }

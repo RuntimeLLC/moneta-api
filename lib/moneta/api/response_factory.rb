@@ -10,7 +10,7 @@ module Moneta
         end
 
         def camelize(str)
-          class_name = str.split('_').map {|w| w.capitalize}.join
+          class_name = str.split('_').map { |w| w.capitalize }.join
           "Moneta::Api::Response::#{ class_name }"
         end
       end
