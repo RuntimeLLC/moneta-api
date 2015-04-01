@@ -8,14 +8,10 @@ module Moneta
           send(:define_method, :attributes) { arr }
         end
 
-        def initialize(params)
-          load_from(params[:account])
-        end
-
         private
 
-        def load_from(params)
-          attributes.each { |attr| send("#{ attr }=", params[ attr ]) }
+        def load_from(response)
+          attributes.each { |attr| send("#{ attr }=", response[ attr ]) }
         end
       end
     end
