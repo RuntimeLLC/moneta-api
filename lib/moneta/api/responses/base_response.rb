@@ -3,7 +3,7 @@ module Moneta
     module Responses
       class BaseResponse
         def self.attributes(*arr)
-          attr_accessor *arr
+          attr_reader *arr
 
           send(:define_method, :attributes) { arr }
         end
@@ -11,7 +11,7 @@ module Moneta
         private
 
         def load_from(response)
-          attributes.each { |attr| send("#{ attr }=", response[ attr ]) }
+          attributes.each { |attr| instance_variable_set("@#{ attr }", response[ attr ]) }
         end
       end
     end
