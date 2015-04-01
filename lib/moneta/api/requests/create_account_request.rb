@@ -1,7 +1,7 @@
 module Moneta
   module Api
-    module Request
-      class CreateAccount < Struct.new(:currency, :payment_password)
+    module Requests
+      class CreateAccountRequest < Struct.new(:currency, :payment_password)
         include Moneta::Api::Support
 
         def to_h

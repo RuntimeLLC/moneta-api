@@ -8,7 +8,12 @@ describe Moneta::Api::Service, vcr: true do
   end
 
   describe '#create_account' do
-    let(:request) { Moneta::Api::Request::CreateAccount.new(currency: 'RUB', payment_password: '12345') }
+    let(:request) do
+      Moneta::Api::Requests::CreateAccountRequest.new.tap do |request|
+        request.currency = 'RUB'
+        request.payment_password = '12345'
+      end
+    end
 
     subject { service.create_account(request) }
 

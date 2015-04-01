@@ -12,7 +12,7 @@ module Moneta
         end
 
         def camelize(class_name)
-          "Moneta::Api::Response::#{ capitalize(class_name) }"
+          "Moneta::Api::Responses::#{ capitalize(class_name) }"
         end
       end
     end

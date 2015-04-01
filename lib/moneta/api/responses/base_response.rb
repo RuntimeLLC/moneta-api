@@ -1,6 +1,6 @@
 module Moneta
   module Api
-    module Response
+    module Responses
       class BaseResponse
         def self.attributes(*arr)
           attr_accessor *arr

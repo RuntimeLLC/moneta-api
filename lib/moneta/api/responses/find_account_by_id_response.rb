@@ -1,6 +1,6 @@
 module Moneta
   module Api
-    module Response
+    module Responses
       class FindAccountByIdResponse < BaseResponse
         attributes :id, :currency, :type, :status
 
