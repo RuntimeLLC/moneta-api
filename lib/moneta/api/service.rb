@@ -6,7 +6,8 @@ module Moneta
       end
 
       def find_account_by_id(id)
-        @client.call(:find_account_by_id, { message: id })
+        response = @client.call(:find_account_by_id, { message: id })
+        ResponseFactory.build(response)
       end
 
       private
