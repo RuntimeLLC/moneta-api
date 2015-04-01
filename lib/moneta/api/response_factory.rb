@@ -1,6 +1,8 @@
 module Moneta
   module Api
     class ResponseFactory
+      extend Moneta::Api::Support
+
       class << self
         def build(response)
           class_name, params = response.to_hash.to_a.first
@@ -9,9 +11,8 @@ module Moneta
           klass.new(params)
         end
 
-        def camelize(str)
-          class_name = str.split('_').map { |w| w.capitalize }.join
-          "Moneta::Api::Response::#{ class_name }"
+        def camelize(class_name)
+          "Moneta::Api::Response::#{ capitalize(class_name) }"
         end
       end
     end

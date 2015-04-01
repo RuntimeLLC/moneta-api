@@ -1,11 +1,13 @@
 module Moneta
   module Api
     module Request
-      class CreateAccount
-        attr_accessor :currency, :payment_password
+      class CreateAccount < Struct.new(:currency, :payment_password)
+        include Moneta::Api::Support
 
-        def to_hash
-          { currency: currency, paymentPassword: payment_password }
+        def to_h
+          super.each_with_object({}) do |(key, value), hash|
+            hash[ capitalize_with_lower(key.to_s) ] = value
+          end
         end
       end
     end
