@@ -1,4 +1,4 @@
-describe Moneta::Api::Response::FindAccountById do
+describe Moneta::Api::Response::FindAccountByIdResponse do
   describe '#load_from' do
     subject { described_class.new(account: { id: '10999' }) }
 

@@ -1,14 +1,12 @@
 module Moneta
   module Api
     module Response
-      class FindAccountById
+      class BaseResponse
         def self.attributes(*arr)
           attr_accessor *arr
 
           send(:define_method, :attributes) { arr }
         end
-
-        attributes :id, :currency, :type, :status
 
         def initialize(params)
           load_from(params[:account])
