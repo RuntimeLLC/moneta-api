@@ -1,4 +1,4 @@
-describe Moneta::Api::Service do
+describe Moneta::Api::Service, vcr: true do
   let(:service) { described_class.new($username, $password) }
 
   describe '#find_account_by_id' do
