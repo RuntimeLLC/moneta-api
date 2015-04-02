@@ -24,6 +24,7 @@ module Moneta
           end
         end
 
+        # TODO need description
         def build_node(key, value)
           if value.kind_of? Hash
             if RESPONSE_MAP.has_key?(key)

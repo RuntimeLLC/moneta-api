@@ -50,7 +50,7 @@ module Moneta
         property :onCancelledCreditUrl
 
         def initialize(response)
-          @account = load_from(response)
+          load_from(response)
         end
       end
     end
