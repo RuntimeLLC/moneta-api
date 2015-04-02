@@ -16,6 +16,17 @@ module Moneta
               hash[ capitalize_with_lower(key.to_s) ] = send(key)
             end
           end
+
+          def capitalize_with_lower(str)
+            str = capitalize(str)
+            str[0].downcase!
+
+            str
+          end
+
+          def capitalize(str)
+            str.split('_').map(&:capitalize).join
+          end
         end
       end
 

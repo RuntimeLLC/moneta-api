@@ -8,7 +8,7 @@ module Moneta
         property :account
 
         def initialize(response)
-          @account = AccountInfo.new(response[:account])
+          load_from(response)
         end
       end
     end
