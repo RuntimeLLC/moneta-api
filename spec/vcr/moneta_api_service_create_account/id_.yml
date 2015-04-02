@@ -21,7 +21,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Wed, 01 Apr 2015 08:36:11 GMT
+      - Wed, 01 Apr 2015 14:40:41 GMT
       content-type:
       - text/xml
       transfer-encoding:
@@ -10732,7 +10732,7 @@ http_interactions:
         OjQ0My9zZXJ2aWNlcyIvPgogICAgICA8L3dzZGw6cG9ydD4KICAgPC93c2Rs
         OnNlcnZpY2U+Cjwvd3NkbDpkZWZpbml0aW9ucz4=
     http_version: '1.1'
-  recorded_at: Wed, 01 Apr 2015 08:36:15 GMT
+  recorded_at: Wed, 01 Apr 2015 14:40:44 GMT
 - request:
     method: post
     uri: https://demo.moneta.ru/services
@@ -10743,14 +10743,14 @@ http_interactions:
         xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.moneta.ru/schemas/messages.xsd"><env:Header><wsse:Security
         xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
         wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username><USERNAME></wsse:Username><wsse:Password
-        Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"><PASSWORD></wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:FindAccountByIdRequest>10999</ins0:FindAccountByIdRequest></env:Body></env:Envelope>
+        Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"><PASSWORD></wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:CreateAccountRequest><ins0:currency>RUB</ins0:currency><ins0:paymentPassword>12345</ins0:paymentPassword></ins0:CreateAccountRequest></env:Body></env:Envelope>
     headers:
       soapaction:
-      - '"FindAccountById"'
+      - '"CreateAccount"'
       content-type:
       - text/xml;charset=UTF-8
       content-length:
-      - '932'
+      - '1007'
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -10765,11 +10765,11 @@ http_interactions:
       server:
       - nginx
       date:
-      - Wed, 01 Apr 2015 08:36:15 GMT
+      - Wed, 01 Apr 2015 14:40:43 GMT
       content-type:
       - text/xml;charset=utf-8
       content-length:
-      - '389'
+      - '264'
       connection:
       - keep-alive
       keep-alive:
@@ -10782,8 +10782,8 @@ http_interactions:
       - '""'
     body:
       encoding: UTF-8
-      string: <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:FindAccountByIdResponse
-        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:account><ns2:id>10999</ns2:id><ns2:currency>RUB</ns2:currency><ns2:type>2</ns2:type><ns2:status>1</ns2:status></ns2:account></ns2:FindAccountByIdResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+      string: <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:CreateAccountResponse
+        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd">29624334</ns2:CreateAccountResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
     http_version: '1.1'
-  recorded_at: Wed, 01 Apr 2015 08:36:16 GMT
+  recorded_at: Wed, 01 Apr 2015 14:40:45 GMT
 recorded_with: VCR 2.9.3
