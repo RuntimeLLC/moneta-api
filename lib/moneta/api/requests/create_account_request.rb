@@ -1,8 +1,11 @@
 module Moneta
   module Api
     module Requests
-      class CreateAccountRequest < Struct.new(:currency, :payment_password)
-        include Moneta::Api::Requests::Helpers
+      class CreateAccountRequest
+        include Moneta::Api::DataMapper
+
+        property :currency
+        property :payment_password
       end
     end
   end

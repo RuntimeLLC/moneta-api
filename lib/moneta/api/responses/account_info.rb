@@ -1,13 +1,16 @@
 module Moneta
   module Api
     module Responses
-      class CreateAccountResponse
+      class AccountInfo
         include Moneta::Api::DataMapper
 
         property :id
+        property :currency
+        property :type
+        property :status
 
         def initialize(response)
-          @id = response
+          @account = load_from(response)
         end
       end
     end

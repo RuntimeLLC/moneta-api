@@ -4,7 +4,7 @@ describe Moneta::Api::Service, vcr: true do
   describe '#find_account_by_id' do
     subject { service.find_account_by_id(10999) }
 
-    its(:id) { is_expected.to eq '10999' }
+    its('account.id') { is_expected.to eq '10999' }
   end
 
   describe '#create_account' do

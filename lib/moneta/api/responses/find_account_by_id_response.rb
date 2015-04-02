@@ -1,11 +1,13 @@
 module Moneta
   module Api
     module Responses
-      class FindAccountByIdResponse < BaseResponse
-        attributes :id, :currency, :type, :status
+      class FindAccountByIdResponse
+        include Moneta::Api::DataMapper
+
+        property :account
 
         def initialize(response)
-          load_from(response[:account])
+          @account = AccountInfo.new(response[:account])
         end
       end
     end
