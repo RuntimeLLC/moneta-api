@@ -10,4 +10,5 @@ require 'moneta/api/responses/base_response'
 require 'moneta/api/responses/find_account_by_id_response'
 require 'moneta/api/responses/create_account_response'
 
+require 'moneta/api/requests/helpers'
 require 'moneta/api/requests/create_account_request'

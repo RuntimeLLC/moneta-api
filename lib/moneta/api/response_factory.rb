@@ -6,6 +6,7 @@ module Moneta
       class << self
         def build(response)
           class_name, params = response.to_hash.to_a.first
+          # TODO: raise exception if const not found
           klass = Object.const_get(camelize(class_name.to_s))
 
           klass.new(params)
