@@ -4,6 +4,7 @@ module Moneta
       class FindAccountByIdResponse
         include Moneta::Api::DataMapper
 
+        # @return [Moneta::Api::Responses::AccountInfo]
         property :account
 
         def initialize(response)
