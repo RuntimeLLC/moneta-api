@@ -16,7 +16,9 @@ module Moneta
       private
 
       def call(method, request_message)
-        response = client.call(method, { message: request_message })
+        response = client.call(method, { message: request_message }) do
+          advanced_typecasting false
+        end
         ResponseFactory.build(response)
       end
     end

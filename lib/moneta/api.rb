@@ -5,7 +5,7 @@ require 'moneta/api/service_methods'
 require 'moneta/api/service'
 require 'moneta/api/data_mapper'
 
-require 'moneta/api/responses/account_info'
+require 'moneta/api/types/account_info'
 require 'moneta/api/responses/find_account_by_id_response'
 require 'moneta/api/responses/create_account_response'
 

@@ -4,10 +4,12 @@ module Moneta
       RESPONSE_MAP = {
         find_account_by_id_response: Moneta::Api::Responses::FindAccountByIdResponse,
         create_account_response:     Moneta::Api::Responses::CreateAccountResponse,
-        account:                     Moneta::Api::Responses::AccountInfo
+        account:                     Moneta::Api::Types::AccountInfo,
       }
 
       class << self
+        # @param [Savon::Response]
+        # @return [Moneta::Api::Responses]
         def build(response)
           _, response = map(response.to_hash).to_a.first
 
