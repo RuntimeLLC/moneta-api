@@ -5,7 +5,6 @@ module Moneta
         base.extend ClassMethods
 
         base.class_eval do
-          include Support
 
           def load_from(data)
             properties.each { |attr| instance_variable_set("@#{ attr }", data[ attr ]) }

@@ -1,7 +1,6 @@
 require 'moneta/api/version'
 require 'savon'
 
-require 'moneta/api/support'
 require 'moneta/api/service_methods'
 require 'moneta/api/service'
 require 'moneta/api/data_mapper'
