@@ -5,12 +5,12 @@ require 'moneta/api/service_methods'
 require 'moneta/api/service'
 require 'moneta/api/data_mapper'
 
-require 'moneta/api/types/account_info'
-require 'moneta/api/types/account_access_info'
 
-require 'moneta/api/responses/find_account_by_id_response'
-require 'moneta/api/responses/create_account_response'
+%w(types responses requests).each do |folder|
+  Dir["lib/moneta/api/#{ folder }/*.rb"].each do |file|
+    require File.join(File.dirname(__FILE__), '../../', file)
+  end
+end
 
 require 'moneta/api/response_factory'
 
-require 'moneta/api/requests/create_account_request'
