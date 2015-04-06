@@ -16,14 +16,14 @@ module Moneta
             end
           end
 
-          def capitalize_with_lower(str)
+          def classify_with_lower(str)
             str = capitalize(str)
             str[0].downcase!
 
             str
           end
 
-          def capitalize(str)
+          def classify(str)
             str.split('_').map(&:capitalize).join
           end
         end

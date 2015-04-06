@@ -1,45 +1,53 @@
 module Moneta
   module Api
     class ResponseFactory
-      RESPONSE_MAP = {
-        find_account_by_id_response: Moneta::Api::Responses::FindAccountByIdResponse,
-        create_account_response:     Moneta::Api::Responses::CreateAccountResponse,
-        account:                     Moneta::Api::Types::AccountInfo,
+      TYPES_MAP = {
+        'tns:AccountInfo' => Moneta::Api::Types::AccountInfo
       }
 
       class << self
         # @param [Savon::Response]
         # @return [Moneta::Api::Responses]
-        def build(response)
-          _, response = map(response.to_hash).to_a.first
+        def build(response, wsdl)
+          klass, data = response.to_hash.to_a.first
+          klass = classify(klass)
 
-          response
+          Object.const_get("Moneta::Api::Responses::#{ klass }").new(
+            map(wsdl.search("//xsd:element[@name='#{ klass }']"), data)
+          )
         end
 
         private
 
-        def map(hash)
-          if hash.keys.count == 1
-            build_node(*hash.to_a.first)
+        def classify(str)
+          str.to_s.split('_').map(&:capitalize).join
+        end
+
+        def map(parent_node, data)
+          if data.kind_of?(Hash)
+            data.keys.count == 1 ?
+              build_element(parent_node, *data.to_a.first) :
+              data.map { |key, value| build_element(parent_node, key, value) }.reduce(Hash.new, :merge)
           else
-            hash.map { |key, value| build_node(key, value) }.reduce(Hash.new, :merge)
+            data
           end
         end
 
-        # TODO need description
-        def build_node(key, value)
-          if value.kind_of? Hash
-            if RESPONSE_MAP.has_key?(key)
-              { key => RESPONSE_MAP[ key ].new(map(value)) }
-            else
-              raise '#TODO '
-            end
+        def build_element(node, key, value)
+          if value.kind_of?(Hash)
+            build_node(node, key, value, Proc.new { |child_node| map(child_node, value) }, Proc.new { raise 'error' })
           else
-            if RESPONSE_MAP.has_key?(key)
-              { key => RESPONSE_MAP[ key ].new(value) }
-            else
-              { key => value }
-            end
+            build_node(node, key, value, Proc.new { |child_node| child_node }, Proc.new { { key => value} })
+          end
+        end
+
+        def build_node(node, key, value, block1, block2)
+          child_node = node.search("[@name='#{ key }']")
+          type = child_node.any? && child_node.attribute('type').value
+          if TYPES_MAP.has_key?(type)
+            { key => TYPES_MAP[ type ].new(block1.call(child_node, value)) }
+          else
+            block2.call
           end
         end
       end
