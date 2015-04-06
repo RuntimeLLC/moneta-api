@@ -3,13 +3,11 @@ module Moneta
     module Responses
       class FindAccountByIdResponse
         include Moneta::Api::DataMapper
+        initialize_from_hash true
 
         # @return [Moneta::Api::Responses::AccountInfo]
         property :account
 
-        def initialize(response)
-          load_from(response)
-        end
       end
     end
   end

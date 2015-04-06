@@ -3,6 +3,7 @@ module Moneta
     module Types
       class AccountInfo
         include Moneta::Api::DataMapper
+        initialize_from_hash true
 
         # @return [String] Номер счета в системе МОНЕТА.РУ
         #   / Account number
@@ -63,11 +64,6 @@ module Moneta
         # @return [String] URL после отмены зачисления средств. Необязательное поле.
         #   / URL on cancelled credit. Optional.
         property :on_cancelled_credit_url
-
-        # @param [Hash]
-        def initialize(response)
-          load_from(response)
-        end
       end
     end
   end

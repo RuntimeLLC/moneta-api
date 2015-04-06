@@ -10,7 +10,6 @@ module Moneta
         # @param [Savon::Response]
         # @return [Moneta::Api::Responses]
         def build(response, wsdl)
-          binding.pry
           klass, data = response.to_hash.to_a.first
           klass = classify(klass)
 
