@@ -9,10 +9,6 @@ describe Moneta::Api::Service, vcr: true do
 
   describe '#create_account' do
     let(:request) do
-      # xml.xpath('//xsd:simpleType[@name="OperationStatus"]')
-      # el = xml.xpath('//xsd:element[@name="FindAccountByIdResponse"]')
-      # el.search('[@name="account"]')
-      # el.search('[@name="account"]').attribute('type').value
       Moneta::Api::Requests::CreateAccountRequest.new.tap do |request|
         request.currency = 'RUB'
         request.payment_password = '12345'

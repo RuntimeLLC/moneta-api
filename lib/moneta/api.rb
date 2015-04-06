@@ -6,6 +6,8 @@ require 'moneta/api/service'
 require 'moneta/api/data_mapper'
 
 require 'moneta/api/types/account_info'
+require 'moneta/api/types/account_access_info'
+
 require 'moneta/api/responses/find_account_by_id_response'
 require 'moneta/api/responses/create_account_response'
 

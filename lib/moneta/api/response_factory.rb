@@ -2,13 +2,15 @@ module Moneta
   module Api
     class ResponseFactory
       TYPES_MAP = {
-        'tns:AccountInfo' => Moneta::Api::Types::AccountInfo
+        'tns:AccountInfo'       => Moneta::Api::Types::AccountInfo,
+        'tns:AccountAccessInfo' => Moneta::Api::Types::AccountAccessInfo
       }
 
       class << self
         # @param [Savon::Response]
         # @return [Moneta::Api::Responses]
         def build(response, wsdl)
+          binding.pry
           klass, data = response.to_hash.to_a.first
           klass = classify(klass)
 

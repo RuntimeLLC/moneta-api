@@ -18,7 +18,7 @@ module Moneta
 
         # @return [Float] Доступный баланс на данном счете
         #   / Available balance of account
-        property :availableBalance
+        property :available_balance
 
         # @return [Integer] Тип счета в системе МОНЕТА.РУ
         #   / Type of account
@@ -30,11 +30,11 @@ module Moneta
 
         # @return [String] URL после списания средств. Необязательное поле.
         #   / URL on debiting. Optional.
-        property :onSuccessfulDebitUrl
+        property :on_successful_debit_url
 
         # @return [String] URL после зачисления средств. Необязательное поле.
         #   / URL on crediting. Optional.
-        property :onSuccessfulCreditUrl
+        property :on_successful_credit_url
 
         # @return [String] Код проверки целостности данных. Необязательное поле.
         #   / Payment form data integrity signature. Optional.
@@ -42,27 +42,27 @@ module Moneta
 
         # @return [Float] Если баланс счета меньше данного значения, то раз в сутки уходит уведомление об этом событии. Необязательное поле.
         #   / Daily notifications if balance is less than threshold. Optional.
-        property :lowBalanceThreshold
+        property :low_balance_threshold
 
         # @return [Float] Если баланс счета больше данного значения, то раз в сутки уходит уведомление об этом событии. Необязательное поле.
         #   / Daily notifications if balance is greater than threshold. Optional.
-        property :highBalanceThreshold
+        property :high_balance_threshold
 
         # @return [AccountAccessInfo] Информация о доступе к счету. Информация отдается, если счет является делегированным. Необязательное поле.
         #   / Account access information. Available if the account is delegated, otherwise omitted. Optional.
-        property :accountAccess
+        property :account_access
 
         # @return [Integer] Счет-прототип с которого берутся свойства "по умолчанию". Необязательное поле.
         #   / Prototype account for default properties values. Optional.
-        property :prototypeAccountId
+        property :prototype_account_id
 
         # @return [String] URL после отмены списания средств. Необязательное поле.
         #   / URL on cancelled debit. Optional.
-        property :onCancelledDebitUrl
+        property :on_cancelled_debit_url
 
         # @return [String] URL после отмены зачисления средств. Необязательное поле.
         #   / URL on cancelled credit. Optional.
-        property :onCancelledCreditUrl
+        property :on_cancelled_credit_url
 
         # @param [Hash]
         def initialize(response)
