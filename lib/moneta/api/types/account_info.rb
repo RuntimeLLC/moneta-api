@@ -3,6 +3,7 @@ module Moneta
     module Types
       class AccountInfo
         include Moneta::Api::DataMapper
+
         initialize_from_hash true
 
         # @return [String] Номер счета в системе МОНЕТА.РУ
