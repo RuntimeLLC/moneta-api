@@ -11,13 +11,13 @@ module Moneta
 
           def to_h
             properties.each_with_object({}) do |key, hash|
-              hash[ classify_with_lower(key.to_s) ] = send(key)
+              hash[ classify_with_lower(key.to_s) ] = send(key) if send(key)
             end
           end
 
           def classify_with_lower(str)
             str = classify(str)
-            str[0].downcase!
+            str[0] = str[0].downcase
 
             str
           end
