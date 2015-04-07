@@ -25,35 +25,35 @@ module Moneta
         property :unit_id
 
         # @return [String] URL после списания средств. Необязательное поле.
-        # / URL . URL on debiting
+        # / URL on debiting. Optional.
         property :on_successful_debit_url
 
         # @return [String] URL после зачисления средств. Необязательное поле.
-        # / URL . URL on crediting
+        # / URL on crediting. Optional.
         property :on_successful_credit_url
 
         # @return [String] Код проверки целостности данных. Необязательное поле.
-        # / Mandatory payment form signature
+        # / Mandatory payment form signature. Optional.
         property :signature
 
-        # @return [Float] Если баланс счета меньше данного значения
-        # / Daily notifications if balance is less than threshold
+        # @return [Float] Если баланс счета меньше данного значения, то раз в сутки уходит уведомление об этом событии. Необязательное поле.
+        # / Daily notifications if balance is less than threshold. Optional.
         property :low_balance_threshold
 
-        # @return [Float] Если баланс счета больше данного значения
-        # / Daily notifications if balance is greater than threshold
+        # @return [Float] Если баланс счета больше данного значения, то раз в сутки уходит уведомление об этом событии. Необязательное поле.
+        # / Daily notifications if balance is greater than threshold. Optional.
         property :high_balance_threshold
 
-        # @return [Integer] Счет
-        # / Prototype account for default properties values
+        # @return [Integer] Счет-прототип с которого берутся свойства "по умолчанию". Необязательное поле.
+        # / Prototype account for default properties values. Optional.
         property :prototype_account_id
 
         # @return [String] URL после отмены списания средств. Необязательное поле.
-        # / URL . URL on cancelled debit
+        # / URL on cancelled debit. Optional.
         property :on_cancelled_debit_url
 
         # @return [String] URL после отмены зачисления средств. Необязательное поле.
-        # / URL . URL on cancelled credit
+        # / URL on cancelled credit. Optional.
         property :on_cancelled_credit_url
       end
     end
