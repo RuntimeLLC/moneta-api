@@ -14,8 +14,14 @@ module Moneta
       end
 
       # @param [Moneta::Api::Requests::TransferRequest]
-      # @return [Moneta::Api::Responses::CreateAccountResponse]
+      # @return [Moneta::Api::Responses::TransferResponse]
       def transfer(request)
+        call(__method__, request.to_h)
+      end
+
+      # @param [Moneta::Api::Requests::PaymentRequest]
+      # @return [Moneta::Api::Responses::PaymentResponse]
+      def payment(request)
         call(__method__, request.to_h)
       end
 
