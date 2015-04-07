@@ -25,10 +25,8 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    Moneta::Api::Service.any_instance.stub(:wsdl).and_return(
+    allow_any_instance_of(Moneta::Api::Service).to receive(:wsdl).and_return(
       Nokogiri::XML(File.read('spec/support/wsdl'))
     )
   end
 end
-
-

@@ -8,7 +8,6 @@ module Moneta
 
         # @return [Moneta::Api::Responses::AccountInfo]
         property :account
-
       end
     end
   end

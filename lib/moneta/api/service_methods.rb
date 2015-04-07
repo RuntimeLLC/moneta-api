@@ -7,9 +7,15 @@ module Moneta
         call(__method__, id)
       end
 
-      # @param [Moneta::Api::Responses::CreateAccountRequest]
+      # @param [Moneta::Api::Requests::CreateAccountRequest]
       # @return [Moneta::Api::Responses::CreateAccountResponse]
       def create_account(request)
+        call(__method__, request.to_h)
+      end
+
+      # @param [Moneta::Api::Requests::TransferRequest]
+      # @return [Moneta::Api::Responses::CreateAccountResponse]
+      def transfer(request)
         call(__method__, request.to_h)
       end
 
