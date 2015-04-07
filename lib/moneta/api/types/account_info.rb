@@ -1,6 +1,9 @@
 module Moneta
   module Api
     module Types
+      # Тип, описывающий атрибуты счета в системе МОНЕТА.РУ.
+      #   / Account information container type.
+
       class AccountInfo
         include Moneta::Api::DataMapper
 

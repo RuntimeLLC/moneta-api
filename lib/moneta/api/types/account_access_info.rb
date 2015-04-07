@@ -1,6 +1,9 @@
 module Moneta
   module Api
     module Types
+      # Тип, описывающий доступ к счету.
+      #   / Account access description type.
+
       class AccountAccessInfo
         include Moneta::Api::DataMapper
 

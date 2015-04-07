@@ -3,6 +3,7 @@ module Moneta
     module Types
       # Базовый тип, содержащий атрибут "version".
       #   / Base type containing "version" attribute.
+
       class Entity
         include Moneta::Api::DataMapper
 

@@ -1,7 +1,7 @@
 describe Moneta::Api::Requests::TransferRequest, vcr: true do
   let(:service) { Moneta::Api::Service.new($username, $password) }
 
-  describe 'create account' do
+  describe 'transfer' do
     let(:request) do
       described_class.new.tap do |request|
         request.amount = 10
