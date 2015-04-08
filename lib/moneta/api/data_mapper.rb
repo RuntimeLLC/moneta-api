@@ -42,8 +42,8 @@ module Moneta
 
           def build_complex_value(type, value)
             value.kind_of?(Array) ?
-              value.map { |v| type.new.fill(v) } :
-              type.new.fill(value)
+              value.map { |v| type.build(v) } :
+              type.build(value)
           end
 
           def to_hash_complex_value(value)
@@ -63,6 +63,10 @@ module Moneta
           properties = instance_variable_set('@properties', current_properties.merge(name => type))
 
           send(:define_method, :properties) { properties }
+        end
+
+        def build(data)
+          self.new.tap { |object| object.fill(data) }
         end
       end
     end

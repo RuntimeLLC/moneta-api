@@ -1,6 +1,6 @@
 describe Moneta::Api::Responses::FindAccountByIdResponse do
   describe '#load_from' do
-    subject { described_class.new.fill(account: { id: '10999' }) }
+    subject { described_class.build(account: { id: '10999' }) }
 
     it 'should fill account info' do
       expect(subject.account).to be_kind_of(Moneta::Api::Types::AccountInfo)

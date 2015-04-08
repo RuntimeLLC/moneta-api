@@ -8,9 +8,7 @@ module Moneta
           klass, data = response.to_hash.to_a.first
           klass = classify(klass)
 
-          Object.const_get("Moneta::Api::Responses::#{ klass }").new.tap do |response|
-            response.fill(data)
-          end
+          Object.const_get("Moneta::Api::Responses::#{ klass }").build(data)
         end
 
         private
