@@ -1,12 +1,15 @@
 module Moneta
   module Api
     module Responses
-      class FindAccountByIdResponse < BaseResponse
-        attributes :id, :currency, :type, :status
+      # Ответ, который приходит на запрос FindAccountByIdRequest.
+      # В ответе содержится информация по счету.
+      #   / Account searching by account number response. Response contains Account information.
 
-        def initialize(response)
-          load_from(response[:account])
-        end
+      class FindAccountByIdResponse
+        include Moneta::Api::DataMapper
+
+        # @return [Moneta::Api::Types::AccountInfo]
+        property :account, Moneta::Api::Types::AccountInfo
       end
     end
   end

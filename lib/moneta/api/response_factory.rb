@@ -1,19 +1,20 @@
 module Moneta
   module Api
     class ResponseFactory
-      extend Moneta::Api::Support
-
       class << self
+        # @param [Savon::Response]
+        # @return [Moneta::Api::Responses::*]
         def build(response)
-          class_name, params = response.to_hash.to_a.first
-          # TODO: raise exception if const not found
-          klass = Object.const_get(camelize(class_name.to_s))
+          klass, data = response.to_hash.to_a.first
+          klass = classify(klass)
 
-          klass.new(params)
+          Object.const_get("Moneta::Api::Responses::#{ klass }").build(data)
         end
 
-        def camelize(class_name)
-          "Moneta::Api::Responses::#{ capitalize(class_name) }"
+        private
+
+        def classify(str)
+          str.to_s.split('_').map(&:capitalize).join
         end
       end
     end

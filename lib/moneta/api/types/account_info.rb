@@ -1,32 +1,35 @@
 module Moneta
   module Api
-    module Requests
-      # Запрос на создание счета.
-      # Счет создается для указанного пользователя или,
-      # если это поле не указано, - для текущего пользователя.
-      #   / Account creation request. Account is created for given structure element (unitId) or for authenticated user's structure if unitId is omitted.
+    module Types
+      # Тип, описывающий атрибуты счета в системе МОНЕТА.РУ.
+      #   / Account information container type.
 
-      class CreateAccountRequest
+      class AccountInfo
         include Moneta::Api::DataMapper
-        # @return [String] Валюта счета
+
+        # @return [String] Номер счета в системе МОНЕТА.РУ
+        #   / Account number
+        property :id
+
+        # @return [String] Валюта данного счета
         #   / Currency of account
         property :currency
 
-        # @return [String] Название счета.
-        #   Название счета должно быть уникальным среди счетов одного пользователя.
-        #   Необязательное поле.
-        #   / Alias of account. Must be unique among accounts of given user. Optional.
+        # @return [Float] Баланс на данном счете
+        #   / Current balance of account
+        property :balance
+
+        # @return [Float] Доступный баланс на данном счете
+        #   / Available balance of account
+        property :available_balance
+
+        # @return [Integer] Тип счета в системе МОНЕТА.РУ
+        #   / Type of account
+        property :type
+
+        # @return [String] Название счета в системе МОНЕТА.РУ. Необязательное поле
+        #   / Alias of account. Optional.
         property :alias
-
-        # @return [String] Платежный пароль. Минимальная длина - 5 символов
-        #   / Payment password. Minimum length is 5 symbols.
-        property :payment_password
-
-        # @return [Integer] Пользователь, которому будет принадлежать данный счет.
-        #   Если это поле не задано, то счет создается для текущего пользователя.
-        #   Необязательное поле.
-        #   / Structure element, where the account belongs to. If omitted authenticated user's structure is used. Optional.
-        property :unit_id
 
         # @return [String] URL после списания средств. Необязательное поле.
         #   / URL on debiting. Optional.
@@ -37,7 +40,7 @@ module Moneta
         property :on_successful_credit_url
 
         # @return [String] Код проверки целостности данных. Необязательное поле.
-        #   / Mandatory payment form signature. Optional.
+        #   / Payment form data integrity signature. Optional.
         property :signature
 
         # @return [Float] Если баланс счета меньше данного значения, то раз в сутки уходит уведомление об этом событии. Необязательное поле.
@@ -47,6 +50,10 @@ module Moneta
         # @return [Float] Если баланс счета больше данного значения, то раз в сутки уходит уведомление об этом событии. Необязательное поле.
         #   / Daily notifications if balance is greater than threshold. Optional.
         property :high_balance_threshold
+
+        # @return [AccountAccessInfo] Информация о доступе к счету. Информация отдается, если счет является делегированным. Необязательное поле.
+        #   / Account access information. Available if the account is delegated, otherwise omitted. Optional.
+        property :account_access, Moneta::Api::Types::AccountAccessInfo
 
         # @return [Integer] Счет-прототип с которого берутся свойства "по умолчанию". Необязательное поле.
         #   / Prototype account for default properties values. Optional.
