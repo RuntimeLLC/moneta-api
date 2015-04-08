@@ -21,7 +21,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Tue, 07 Apr 2015 10:50:39 GMT
+      - Wed, 08 Apr 2015 13:15:47 GMT
       content-type:
       - text/xml
       transfer-encoding:
@@ -10732,7 +10732,7 @@ http_interactions:
         OjQ0My9zZXJ2aWNlcyIvPgogICAgICA8L3dzZGw6cG9ydD4KICAgPC93c2Rs
         OnNlcnZpY2U+Cjwvd3NkbDpkZWZpbml0aW9ucz4=
     http_version: '1.1'
-  recorded_at: Tue, 07 Apr 2015 10:50:43 GMT
+  recorded_at: Wed, 08 Apr 2015 13:15:59 GMT
 - request:
     method: post
     uri: https://demo.moneta.ru/services
@@ -10765,7 +10765,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Tue, 07 Apr 2015 10:50:45 GMT
+      - Wed, 08 Apr 2015 13:15:59 GMT
       content-type:
       - text/xml;charset=utf-8
       content-length:
@@ -10783,7 +10783,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:TransferResponse
-        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:status>SUCCEED</ns2:status><ns2:dateTime>2015-04-07T13:50:45.000+03:00</ns2:dateTime><ns2:transaction>339833</ns2:transaction></ns2:TransferResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:status>SUCCEED</ns2:status><ns2:dateTime>2015-04-08T16:15:59.000+03:00</ns2:dateTime><ns2:transaction>339893</ns2:transaction></ns2:TransferResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
     http_version: '1.1'
-  recorded_at: Tue, 07 Apr 2015 10:50:46 GMT
+  recorded_at: Wed, 08 Apr 2015 13:16:00 GMT
 recorded_with: VCR 2.9.3

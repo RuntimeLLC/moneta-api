@@ -21,7 +21,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Thu, 02 Apr 2015 11:03:21 GMT
+      - Wed, 08 Apr 2015 13:16:00 GMT
       content-type:
       - text/xml
       transfer-encoding:
@@ -10732,7 +10732,7 @@ http_interactions:
         OjQ0My9zZXJ2aWNlcyIvPgogICAgICA8L3dzZGw6cG9ydD4KICAgPC93c2Rs
         OnNlcnZpY2U+Cjwvd3NkbDpkZWZpbml0aW9ucz4=
     http_version: '1.1'
-  recorded_at: Thu, 02 Apr 2015 11:03:25 GMT
+  recorded_at: Wed, 08 Apr 2015 13:16:15 GMT
 - request:
     method: post
     uri: https://demo.moneta.ru/services
@@ -10765,7 +10765,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Thu, 02 Apr 2015 11:03:25 GMT
+      - Wed, 08 Apr 2015 13:16:15 GMT
       content-type:
       - text/xml;charset=utf-8
       content-length:
@@ -10785,5 +10785,5 @@ http_interactions:
       string: <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:FindAccountByIdResponse
         xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:account><ns2:id>10999</ns2:id><ns2:currency>RUB</ns2:currency><ns2:type>2</ns2:type><ns2:status>1</ns2:status></ns2:account></ns2:FindAccountByIdResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
     http_version: '1.1'
-  recorded_at: Thu, 02 Apr 2015 11:03:25 GMT
+  recorded_at: Wed, 08 Apr 2015 13:16:16 GMT
 recorded_with: VCR 2.9.3

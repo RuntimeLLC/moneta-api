@@ -5,6 +5,10 @@ require 'moneta/api'
 require 'yaml'
 require 'vcr'
 
+Dir['spec/support/**/*.rb'].each do |file|
+  require File.join(File.dirname(__FILE__), '..', file)
+end
+
 config = YAML.load(File.read(File.join(Dir.pwd, 'spec/support/moneta.yml')))
 
 $username = config['username']
@@ -30,3 +34,5 @@ RSpec.configure do |config|
     )
   end
 end
+
+Dir

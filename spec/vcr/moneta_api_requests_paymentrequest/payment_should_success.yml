@@ -21,7 +21,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Tue, 07 Apr 2015 11:47:42 GMT
+      - Wed, 08 Apr 2015 13:15:35 GMT
       content-type:
       - text/xml
       transfer-encoding:
@@ -10732,7 +10732,7 @@ http_interactions:
         OjQ0My9zZXJ2aWNlcyIvPgogICAgICA8L3dzZGw6cG9ydD4KICAgPC93c2Rs
         OnNlcnZpY2U+Cjwvd3NkbDpkZWZpbml0aW9ucz4=
     http_version: '1.1'
-  recorded_at: Tue, 07 Apr 2015 11:47:45 GMT
+  recorded_at: Wed, 08 Apr 2015 13:15:45 GMT
 - request:
     method: post
     uri: https://demo.moneta.ru/services
@@ -10765,7 +10765,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Tue, 07 Apr 2015 11:47:45 GMT
+      - Wed, 08 Apr 2015 13:15:46 GMT
       content-type:
       - text/xml;charset=utf-8
       content-length:
@@ -10783,7 +10783,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:PaymentResponse
-        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:id>339834</ns2:id><ns2:attribute><ns2:key>category</ns2:key><ns2:value>BUSINESS</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourcecurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamount</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>typeid</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetamount</ns2:key><ns2:value>-10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamountfee</ns2:key><ns2:value>0</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetcurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>statusid</ns2:key><ns2:value>SUCCEED</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamounttotal</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>modified</ns2:key><ns2:value>2015-04-07T14:47:45.000+03:00</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetaccountid</ns2:key><ns2:value>10999</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceaccountid</ns2:key><ns2:value>28988504</ns2:value></ns2:attribute><ns2:attribute><ns2:key>isreversed</ns2:key><ns2:value>true</ns2:value></ns2:attribute></ns2:PaymentResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:id>339892</ns2:id><ns2:attribute><ns2:key>category</ns2:key><ns2:value>BUSINESS</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourcecurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamount</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>typeid</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetamount</ns2:key><ns2:value>-10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamountfee</ns2:key><ns2:value>0</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetcurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>statusid</ns2:key><ns2:value>SUCCEED</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamounttotal</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>modified</ns2:key><ns2:value>2015-04-08T16:15:46.000+03:00</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetaccountid</ns2:key><ns2:value>10999</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceaccountid</ns2:key><ns2:value>28988504</ns2:value></ns2:attribute><ns2:attribute><ns2:key>isreversed</ns2:key><ns2:value>true</ns2:value></ns2:attribute></ns2:PaymentResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
     http_version: '1.1'
-  recorded_at: Tue, 07 Apr 2015 11:47:47 GMT
+  recorded_at: Wed, 08 Apr 2015 13:15:47 GMT
 recorded_with: VCR 2.9.3

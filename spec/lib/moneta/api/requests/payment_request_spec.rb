@@ -16,7 +16,7 @@ describe Moneta::Api::Requests::PaymentRequest, vcr: true do
 
     it 'should success' do
       expect(response.attribute.first).to be_kind_of(Moneta::Api::Types::KeyValueAttribute)
-      expect(response.id).to eq('339834')
+      expect(response.id).to be_a_moneta_id
     end
   end
 end
