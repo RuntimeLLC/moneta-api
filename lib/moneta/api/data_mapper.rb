@@ -8,7 +8,7 @@ module Moneta
           def fill(data)
             properties.each do |property, type|
               value = data[ property ]
-              
+
               if value
                 property_value = type.nil? ? value : build_complex_value(type, value)
 
