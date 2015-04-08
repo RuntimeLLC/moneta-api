@@ -11,6 +11,6 @@ describe Moneta::Api::Requests::CreateAccountRequest, vcr: true do
 
     subject { service.create_account(request) }
 
-    its(:id) { is_expected.to eq '61280818' }
+    its(:account_id) { is_expected.to eq '47494515' }
   end
 end

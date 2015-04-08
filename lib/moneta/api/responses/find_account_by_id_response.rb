@@ -8,10 +8,8 @@ module Moneta
       class FindAccountByIdResponse
         include Moneta::Api::DataMapper
 
-        initialize_from_hash true
-
-        # @return [Moneta::Api::Responses::AccountInfo]
-        property :account
+        # @return [Moneta::Api::Types::AccountInfo]
+        property :account, Moneta::Api::Types::AccountInfo
       end
     end
   end

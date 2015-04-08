@@ -6,10 +6,12 @@ module Moneta
 
         # @return [String] Номер счета в системе МОНЕТА.РУ
         #   Account number
-        property :id
+        property :account_id
 
-        def initialize(response)
-          @id = response
+        def fill(response)
+          @account_id = response
+
+          self
         end
       end
     end

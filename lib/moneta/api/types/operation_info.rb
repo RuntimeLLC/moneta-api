@@ -13,7 +13,7 @@ module Moneta
         #   / Transaction ID
         property :id
 
-        # @return [MonetaKeyValueAttribute] Поля операции. Полей в операции может быть 0 и более.
+        # @return [KeyValueAttribute] Поля операции. Полей в операции может быть 0 и более.
         # Список полей:
         #   * clienttransaction - внешний (не в системе МОНЕТА.РУ) номер операции;
         #   * statusid - статус операции;
@@ -71,12 +71,12 @@ module Moneta
         #     The transaction may contain several attributes with different keys.
         #     The full attribute's key consists of prefix ("customfield:") and tag (32 characters).
         #     For example, "customfield:name".
-        property :attribute
+        property :attribute, Moneta::Api::Types::KeyValueAttribute
 
-        # @param [MonetaKeyValueAttribute]
+        # @param [KeyValueAttribute]
         # @return item
         def add_attribute(item)
-          (@attribute ||=[]).push(item)
+          (@attribute ||=[]).push(item) # TODO need check type
         end
       end
     end

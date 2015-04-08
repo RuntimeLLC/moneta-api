@@ -3,9 +3,7 @@ module Moneta
     module Responses
       # Ответ на запрос перевода денежных средств.
       #   / Money transfer registration response.
-      class TransferResponse < Types::TransactionResponseType
-        initialize_from_hash true
-      end
+      class TransferResponse < Types::TransactionResponseType; end
     end
   end
 end

@@ -7,8 +7,6 @@ module Moneta
       class AccountAccessInfo
         include Moneta::Api::DataMapper
 
-        initialize_from_hash true
-
         # @return [Boolean] Доступ на изменение свойств счета
         # / Account attributes modification access
         property :access_to_write
