@@ -34,5 +34,3 @@ RSpec.configure do |config|
     )
   end
 end
-
-Dir
