@@ -76,7 +76,11 @@ module Moneta
         # @param [KeyValueAttribute]
         # @return item
         def add_attribute(item)
-          (@attribute ||=[]).push(item) # TODO need check type
+          if item.kind_of? Moneta::Api::Types::KeyValueAttribute
+            (@attribute ||=[]).push(item)
+          else
+            raise TypeError.new("TypeError: can't convert #{ item.class } into Moneta::Api::Types::KeyValueAttribute")
+          end
         end
       end
     end
