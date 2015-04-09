@@ -55,12 +55,12 @@ module Moneta
       end
 
       module ClassMethods
-        def property(name, type=nil)
+        def property(name, base_type=nil)
           attr_accessor(name)
 
           # Сохраняем свойста и перезаписываем instance метод
           current_properties = instance_variable_get('@properties') || {}
-          properties = instance_variable_set('@properties', current_properties.merge(name => type))
+          properties = instance_variable_set('@properties', current_properties.merge(name => base_type))
 
           send(:define_method, :properties) { properties }
         end

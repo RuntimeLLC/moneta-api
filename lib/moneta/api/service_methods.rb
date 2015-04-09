@@ -1,6 +1,12 @@
 module Moneta
   module Api
     module ServiceMethods
+      # @param [Moneta::Api::Requests::AuthoriseTransactionBatchRequest]
+      # @return [Moneta::Api::Responses::AuthoriseTransactionBatchResponse]
+      def authorise_transaction_batch(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Integer]
       # @return [Moneta::Api::Responses::FindAccountByIdResponse]
       def find_account_by_id(id)
