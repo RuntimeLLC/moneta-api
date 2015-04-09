@@ -2,7 +2,7 @@ module Moneta
   module Api
     module Types
       # Тип, описывающий атрибуты операции в ответах.
-      #   / Transaction attributes type for responses.
+      # Transaction attributes type for responses.
 
       class TransactionResponseType
         include Moneta::Api::DataMapper

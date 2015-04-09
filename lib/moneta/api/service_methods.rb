@@ -13,6 +13,12 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::ForecastTransactionRequest]
+      # @return [Moneta::Api::Responses::ForecastTransactionResponse]
+      def forecast_transaction(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Integer]
       # @return [Moneta::Api::Responses::FindAccountByIdResponse]
       def find_account_by_id(id)

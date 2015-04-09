@@ -2,7 +2,7 @@ module Moneta
   module Api
     module Types
       # Тип, который позволяет работать с сущностями типа "ключ-значение".
-      #   / Key-value pairs type.
+      # Key-value pairs type.
 
       class KeyValueAttribute
         include Moneta::Api::DataMapper
