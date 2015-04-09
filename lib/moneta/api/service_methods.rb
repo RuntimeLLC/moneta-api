@@ -9,7 +9,6 @@ module Moneta
 
       # @param [String]
       # @return [Moneta::Api::Responses::FindAccountByAliasResponse]
-
       def find_account_by_alias(request)
         call(__method__, request)
       end
