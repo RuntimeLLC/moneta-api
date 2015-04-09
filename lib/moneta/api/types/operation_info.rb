@@ -4,7 +4,7 @@ module Moneta
       # Тип, описывающий операцию в системе МОНЕТА.РУ.
       # Он представляет собой номер (id) операции и набор полей,
       # которые присутствуют у данной операции. Поля представлены в виде "ключ-значение".
-      #   / Transaction type contains transaction id and key-value pairs representing transaction attributes.
+      # Transaction type contains transaction id and key-value pairs representing transaction attributes.
 
       class OperationInfo
         include Moneta::Api::DataMapper

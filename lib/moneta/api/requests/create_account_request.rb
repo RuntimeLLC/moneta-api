@@ -4,7 +4,7 @@ module Moneta
       # Запрос на создание счета.
       # Счет создается для указанного пользователя или,
       # если это поле не указано, - для текущего пользователя.
-      #   / Account creation request. Account is created for given structure element (unitId) or for authenticated user's structure if unitId is omitted.
+      # Account creation request. Account is created for given structure element (unitId) or for authenticated user's structure if unitId is omitted.
 
       class CreateAccountRequest
         include Moneta::Api::DataMapper

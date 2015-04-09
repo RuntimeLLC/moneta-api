@@ -2,7 +2,7 @@ module Moneta
   module Api
     module Types
       # Тип, описывающий параметры операции в запросах.
-      #   / Transaction parameters type for requests.
+      # Transaction parameters type for requests.
 
       class TransactionRequestType < Entity
         # @return [Integer] Номер счета плательщика
