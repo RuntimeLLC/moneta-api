@@ -35,7 +35,6 @@ module Moneta
 
       def call(method, request_message)
         response = client.call(method, { message: request_message })
-        binding.pry
         ResponseFactory.build(response)
       end
     end
