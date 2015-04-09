@@ -7,6 +7,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [String]
+      # @return [Moneta::Api::Responses::FindAccountByAliasResponse]
+      def find_account_by_alias(request)
+        call(__method__, request)
+      end
+
       # @param [Integer]
       # @return [Moneta::Api::Responses::FindAccountByIdResponse]
       def find_account_by_id(id)
