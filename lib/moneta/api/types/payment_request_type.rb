@@ -4,9 +4,7 @@ module Moneta
       # Тип, описывающий параметры операции в запросах. Отличается от TransactionRequestType тем, что в качестве получателя можно указывать не только номер счета.
       #   / Transaction parameters type for requests. The difference from TransactionRequestType is that payee may be addressed not only by account number rather than transaction ID, e-mail address or phone number.
 
-    class PaymentRequestType
-        include Moneta::Api::DataMapper
-
+    class PaymentRequestType < Entity
         # @return [Integer] Номер счета плательщика
         #   / Payer account number
         property :payer
