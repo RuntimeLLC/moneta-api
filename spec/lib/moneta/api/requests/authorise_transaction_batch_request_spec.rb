@@ -1,9 +1,9 @@
 describe Moneta::Api::Requests::AuthoriseTransactionBatchRequest do
   describe 'Entity extension' do
-    subject { described_class.new }
+    subject { described_class.new.properties.keys }
 
-    it { is_expected.to be_respond_to(:version) }
-    it { is_expected.to be_respond_to(:transactional) }
+    it { is_expected.to be_include(:version) }
+    it { is_expected.to be_include(:transactional) }
   end
 
   describe '#add_transaction' do
