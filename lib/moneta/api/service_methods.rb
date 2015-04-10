@@ -7,6 +7,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Moneta::Api::Requests::ConfirmTransactionBatchRequest]
+      # @return [Moneta::Api::Responses::ConfirmTransactionBatchResponse]
+      def confirm_transaction_batch(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [String]
       # @return [Moneta::Api::Responses::FindAccountByAliasResponse]
       def find_account_by_alias(request)
