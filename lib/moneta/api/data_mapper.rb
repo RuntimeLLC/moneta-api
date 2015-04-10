@@ -63,13 +63,27 @@ module Moneta
 
           # Сохраняем свойста и перезаписываем instance метод
           current_properties = instance_variable_get('@properties') || {}
-          properties = instance_variable_set('@properties', current_properties.merge(name => base_type))
+          properties = instance_variable_set('@properties',
+            current_properties.merge(name => base_type).merge(parents_properties)
+          )
 
           send(:define_method, :properties) { properties }
         end
 
         def build(data)
           self.new.tap { |object| object.fill(data) }
+        end
+
+        private
+
+        def parents_properties
+          instance_variable_get('@parents_properties') ||
+            instance_variable_set('@parents_properties', ancestors.each_with_object({}) do |klass, hash|
+              if klass.name.match(/Moneta::Api::(Types|Requests|Responses)/)
+                hash.merge!(klass.instance_variable_get('@properties') || {})
+              end
+            end
+          )
         end
       end
     end
