@@ -19,6 +19,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Moneta::Api::Requests::ConfirmTransactionRequest]
+      # @return [Moneta::Api::Responses::ConfirmTransactionResponse]
+      def confirm_transaction(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Moneta::Api::Requests::ConfirmTransactionBatchRequest]
       # @return [Moneta::Api::Responses::ConfirmTransactionBatchResponse]
       def confirm_transaction_batch(request)
