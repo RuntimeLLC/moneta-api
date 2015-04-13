@@ -73,6 +73,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Moneta::Api::Requests::GetAccountPaymentPasswordChallengeRequest]
+      # @return [Moneta::Api::Responses::GetAccountPaymentPasswordChallengeResponse]
+      def get_account_payment_password_challenge(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Moneta::Api::Requests::InvoiceRequest]
       # @return [Moneta::Api::Responses::InvoiceResponse]
       def invoice(request)
