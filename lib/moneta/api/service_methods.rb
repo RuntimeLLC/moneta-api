@@ -97,6 +97,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Moneta::Api::Requests::RefundRequest]
+      # @return [Moneta::Api::Responses::RefundResponse]
+      def refund(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Moneta::Api::Requests::TransferRequest]
       # @return [Moneta::Api::Responses::TransferResponse]
       def transfer(request)
