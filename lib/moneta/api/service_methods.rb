@@ -85,6 +85,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Moneta::Api::Requests::VerifyTransactionRequest]
+      # @return [Moneta::Api::Responses::VerifyTransactionResponse]
+      def verify_transaction(request)
+        call(__method__, request.to_hash)
+      end
+
       private
 
       def call(method, request_message)
