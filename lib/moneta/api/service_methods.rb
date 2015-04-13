@@ -85,6 +85,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Moneta::Api::Requests::InvoiceBatchRequest]
+      # @return [Moneta::Api::Responses::InvoiceBatchResponse]
+      def invoice_batch(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Moneta::Api::Requests::TransferRequest]
       # @return [Moneta::Api::Responses::TransferResponse]
       def transfer(request)

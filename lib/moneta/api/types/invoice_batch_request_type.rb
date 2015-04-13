@@ -1,10 +1,10 @@
 module Moneta
   module Api
     module Types
-      # Тип для запроса на отмену операций в пакетном режиме.
-      # Batch mode transaction cancelation request type.
+      # Тип, описывающий параметры операции в запросах в пакетном режиме.
+      # Transaction parameters type for requests in batch processing mode.
 
-      class CancelTransactionBatchRequestType < Entity
+      class InvoiceBatchRequestType < Entity
         # @return [Boolean] Флаг, указывающий выполнять ли все денежные переводы в одной транзакции.
         #   Если transactional = true, то:
         #   при возникновении ошибки все проведенные операции будут отменены
@@ -22,18 +22,22 @@ module Moneta
         #   / Stops batch processing on exceptions. Used only in conjunction with transactional=false.
         property :exit_on_failure
 
-        # @return [Array[Moneta::Api::Types::CancelTransactionRequestType]] Набор операций, которые необходимо выполнить в одном пакете.
+        # @return [Moneta::Api::Types::InvoiceRequestType] Набор операций, которые необходимо выполнить в одном пакете.
         #   Операции выполняются в том порядке, в котором они переданы в запросе.
         #   / Set of transfers to be processed in one batch. Processed in order of appearance.
         property :transaction
 
-        # @param [Moneta::Api::Types::CancelTransactionRequestType]
+        # Набор операций, которые необходимо выполнить в одном пакете.
+        # Операции выполняются в том порядке, в котором они переданы в запросе.
+        # Set of transfers to be processed in one batch.
+        # Processed in order of appearance.
+        # @param[Moneta::Api::Types::InvoiceRequestType]
         # @return void
         def add_transaction(item)
-          if item.kind_of? Moneta::Api::Types::CancelTransactionRequestType
+          if item.kind_of? Moneta::Api::Types::InvoiceRequestType
             (@transaction ||=[]).push(item)
           else
-            raise TypeError.new("TypeError: can't convert #{ item.class } into Moneta::Api::Types::CancelTransactionRequestType")
+            raise TypeError.new("TypeError: can't convert #{ item.class } into Moneta::Api::Types::InvoiceRequestType")
           end
         end
       end
