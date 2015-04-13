@@ -61,6 +61,12 @@ module Moneta
         call(__method__, id)
       end
 
+      # @param [Moneta::Api::Requests::FindLastOperationsListRequest]
+      # @return [Moneta::Api::Responses::FindLastOperationsListResponse]
+      def find_last_operations_list(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Moneta::Api::Requests::CreateAccountRequest]
       # @return [Moneta::Api::Responses::CreateAccountResponse]
       def create_account(request)
