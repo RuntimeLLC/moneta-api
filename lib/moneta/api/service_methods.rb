@@ -37,6 +37,12 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::FindAccountsListRequest]
+      # @return [Moneta::Api::Responses::FindAccountsListResponse]
+      def find_accounts_list(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [Moneta::Api::Requests::ForecastTransactionRequest]
       # @return [Moneta::Api::Responses::ForecastTransactionResponse]
       def forecast_transaction(request)
