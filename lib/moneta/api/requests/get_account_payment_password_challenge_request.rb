@@ -14,4 +14,3 @@ module Moneta
     end
   end
 end
-
