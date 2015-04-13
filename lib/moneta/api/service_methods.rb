@@ -31,6 +31,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Moneta::Api::Requests::CreateAccountRequest]
+      # @return [Moneta::Api::Responses::CreateAccountResponse]
+      def create_account(request)
+        call(__method__, request.to_hash)
+      end
+
       # @param [String]
       # @return [Moneta::Api::Responses::FindAccountByAliasResponse]
       def find_account_by_alias(request)
@@ -67,9 +73,9 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
-      # @param [Moneta::Api::Requests::CreateAccountRequest]
-      # @return [Moneta::Api::Responses::CreateAccountResponse]
-      def create_account(request)
+      # @param [Moneta::Api::Requests::InvoiceRequest]
+      # @return [Moneta::Api::Responses::InvoiceResponse]
+      def invoice(request)
         call(__method__, request.to_hash)
       end
 
