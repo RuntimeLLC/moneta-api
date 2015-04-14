@@ -7,7 +7,7 @@ module Moneta
       class CancelTransactionBatchResponse
         include Moneta::Api::DataMapper
 
-        # @return [Array[MonetaCancelTransactionBatchResponseType]] Детали проведенных операций, либо описание ошибок, если операция не проведена.
+        # @return [Array[Moneta::Api::Types::CancelTransactionBatchResponseType]] Детали проведенных операций, либо описание ошибок, если операция не проведена.
         #   Порядок соответствует набору операций, переданных в CancelTransactionBatchRequest.
         #   / Either transaction details or error description in order of appearance in corresponding request.
         property :transaction, Types::CancelTransactionBatchResponseType

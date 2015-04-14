@@ -7,7 +7,7 @@ module Moneta
       class ConfirmTransactionBatchResponse
         include Moneta::Api::DataMapper
 
-        # @return [MonetaOperationInfoBatchResponseType] Детали проведенных операций, либо описание ошибок, если операция не проведена.
+        # @return [Moneta::Api::Types::OperationInfoBatchResponseType] Детали проведенных операций, либо описание ошибок, если операция не проведена.
         #   Порядок соответствует набору операций, переданных в ConfirmTransactionBatchRequest.
         #   / Either transaction details or error description in order of appearance in corresponding request.
         property :transaction, Types::OperationInfoBatchResponseType
