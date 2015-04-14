@@ -1,12 +1,14 @@
+if ENV['CODECLIMATE_REPO_TOKEN']
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+end
+
 require 'rspec'
 require 'pry'
 require 'rspec/its'
 require 'moneta/api'
 require 'yaml'
 require 'vcr'
-require 'codeclimate-test-reporter'
-
-CodeClimate::TestReporter.start if ENV['CODECLIMATE_REPO_TOKEN']
 
 Dir['spec/support/**/*.rb'].each do |file|
   require File.join(File.dirname(__FILE__), '..', file)
@@ -22,6 +24,7 @@ VCR.configure do |config|
   config.hook_into :fakeweb
   config.filter_sensitive_data('<USERNAME>') { $username }
   config.filter_sensitive_data('<PASSWORD>') { $password }
+  config.ignore_hosts 'codeclimate.com'
 end
 
 RSpec.configure do |config|
