@@ -85,6 +85,12 @@ module Moneta
         call(__method__, request.to_hash)
       end
 
+      # @param [Integer]
+      # @return [Moneta::Api::Responses::GetOperationDetailsByIdResponse]
+      def get_operation_details_by_id(id)
+        call(__method__, id)
+      end
+
       # @param [Moneta::Api::Requests::InvoiceRequest]
       # @return [Moneta::Api::Responses::InvoiceResponse]
       def invoice(request)
