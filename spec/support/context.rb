@@ -1,5 +1,5 @@
 RSpec.shared_context 'moneta' do
-  let(:service) { Moneta::Api::Service.new($username, $password) }
+  let(:service) { Moneta::Api::Service.new($username, $password, { demo_mode: true }) }
 
   let(:fill_base_settings) do
     Proc.new do |request|

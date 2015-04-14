@@ -27,7 +27,8 @@ describe Moneta::Api::Requests::AuthoriseTransactionBatchRequest do
   end
 
   describe 'use', vcr: true do
-    let(:service) { Moneta::Api::Service.new($username, $password) }
+    include_context 'moneta'
+
     let(:data) {
       {
         amount: 10,
