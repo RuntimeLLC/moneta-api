@@ -1,3 +1,5 @@
+require_relative 'verify_transfer_response_type'
+
 module Moneta
   module Api
     module Types

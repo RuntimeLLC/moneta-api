@@ -21,7 +21,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Fri, 10 Apr 2015 12:27:00 GMT
+      - Tue, 14 Apr 2015 08:37:20 GMT
       content-type:
       - text/xml
       transfer-encoding:
@@ -10733,7 +10733,7 @@ http_interactions:
         ZXMiLz4KICAgICAgPC93c2RsOnBvcnQ+CiAgIDwvd3NkbDpzZXJ2aWNlPgo8
         L3dzZGw6ZGVmaW5pdGlvbnM+
     http_version: '1.1'
-  recorded_at: Fri, 10 Apr 2015 12:27:03 GMT
+  recorded_at: Tue, 14 Apr 2015 08:37:23 GMT
 - request:
     method: post
     uri: https://demo.moneta.ru/services
@@ -10766,7 +10766,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Fri, 10 Apr 2015 12:27:03 GMT
+      - Tue, 14 Apr 2015 08:37:23 GMT
       content-type:
       - text/xml;charset=utf-8
       content-length:
@@ -10784,7 +10784,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:AuthoriseTransactionResponse
-        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:id>340023</ns2:id><ns2:attribute><ns2:key>category</ns2:key><ns2:value>BUSINESS</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourcecurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamount</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>typeid</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetamount</ns2:key><ns2:value>-10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>protectioncode</ns2:key><ns2:value>88776</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetcurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>statusid</ns2:key><ns2:value>INPROGRESS</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamounttotal</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>modified</ns2:key><ns2:value>2015-04-10T15:27:03.000+03:00</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetaccountid</ns2:key><ns2:value>10999</ns2:value></ns2:attribute><ns2:attribute><ns2:key>protectioncodeexpirationdate</ns2:key><ns2:value>2015-04-11T15:27:02.000+03:00</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceaccountid</ns2:key><ns2:value>28988504</ns2:value></ns2:attribute><ns2:attribute><ns2:key>isreversed</ns2:key><ns2:value>true</ns2:value></ns2:attribute></ns2:AuthoriseTransactionResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:id>340167</ns2:id><ns2:attribute><ns2:key>category</ns2:key><ns2:value>BUSINESS</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourcecurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamount</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>typeid</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetamount</ns2:key><ns2:value>-10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>protectioncode</ns2:key><ns2:value>49754</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetcurrencycode</ns2:key><ns2:value>RUB</ns2:value></ns2:attribute><ns2:attribute><ns2:key>statusid</ns2:key><ns2:value>INPROGRESS</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceamounttotal</ns2:key><ns2:value>10</ns2:value></ns2:attribute><ns2:attribute><ns2:key>modified</ns2:key><ns2:value>2015-04-14T11:37:23.000+03:00</ns2:value></ns2:attribute><ns2:attribute><ns2:key>targetaccountid</ns2:key><ns2:value>10999</ns2:value></ns2:attribute><ns2:attribute><ns2:key>protectioncodeexpirationdate</ns2:key><ns2:value>2015-04-15T11:37:22.000+03:00</ns2:value></ns2:attribute><ns2:attribute><ns2:key>sourceaccountid</ns2:key><ns2:value>28988504</ns2:value></ns2:attribute><ns2:attribute><ns2:key>isreversed</ns2:key><ns2:value>true</ns2:value></ns2:attribute></ns2:AuthoriseTransactionResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
     http_version: '1.1'
-  recorded_at: Fri, 10 Apr 2015 12:27:04 GMT
+  recorded_at: Tue, 14 Apr 2015 08:37:24 GMT
 recorded_with: VCR 2.9.3

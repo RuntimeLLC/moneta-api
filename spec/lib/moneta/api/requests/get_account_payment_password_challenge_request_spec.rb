@@ -1,5 +1,5 @@
 describe Moneta::Api::Requests::GetAccountPaymentPasswordChallengeRequest, vcr: true do
-  let(:service) { Moneta::Api::Service.new($username, $password) }
+  include_context 'moneta'
 
   describe 'get_account_payment_password_challenge' do
     let(:request) do
