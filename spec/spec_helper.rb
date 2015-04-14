@@ -4,6 +4,9 @@ require 'rspec/its'
 require 'moneta/api'
 require 'yaml'
 require 'vcr'
+require 'codeclimate-test-reporter'
+
+CodeClimate::TestReporter.start if ENV['CODECLIMATE_REPO_TOKEN']
 
 Dir['spec/support/**/*.rb'].each do |file|
   require File.join(File.dirname(__FILE__), '..', file)
