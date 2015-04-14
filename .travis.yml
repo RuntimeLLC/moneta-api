@@ -6,4 +6,5 @@ rvm:
   - 2.2
 
 script:
+  - echo "username: 'username'\r\npassword: 'password'" > spec/support/moneta.yml
   - CODECLIMATE_REPO_TOKEN=d10be753ffa1a760be2df97c61673629a3fa86270cdd898250b8366213b0799c bundle exec rspec
