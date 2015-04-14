@@ -2,10 +2,11 @@
 [![Build Status](https://travis-ci.org/ssnikolay/moneta-api.svg?branch=master)](https://travis-ci.org/ssnikolay/moneta-api)
 [![Code Climate](https://codeclimate.com/github/ssnikolay/moneta-api/badges/gpa.svg)](https://codeclimate.com/github/ssnikolay/moneta-api)
 [![Test Coverage](https://codeclimate.com/github/ssnikolay/moneta-api/badges/coverage.svg)](https://codeclimate.com/github/ssnikolay/moneta-api)
+[![Inline docs](http://inch-ci.org/github/ssnikolay/moneta-api.svg?branch=master)](http://inch-ci.org/github/ssnikolay/moneta-api)
 
 # moneta-api
 
-TODO: Write a gem description
+МОНЕТА.РУ (MONETA.MerchantAPI.v2)
 
 ## Installation
 
