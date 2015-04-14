@@ -1,5 +1,5 @@
 describe Moneta::Api::Requests::CreateAccountRequest, vcr: true do
-  let(:service) { Moneta::Api::Service.new($username, $password) }
+  include_context 'moneta'
 
   describe 'create account' do
     let(:request) do

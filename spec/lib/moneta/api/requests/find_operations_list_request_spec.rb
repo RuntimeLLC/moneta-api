@@ -1,5 +1,5 @@
 describe Moneta::Api::Requests::FindOperationsListRequest, vcr: true do
-  let(:service) { Moneta::Api::Service.new($username, $password) }
+  include_context 'moneta'
 
   describe 'find_operations_list' do
     let(:request) do

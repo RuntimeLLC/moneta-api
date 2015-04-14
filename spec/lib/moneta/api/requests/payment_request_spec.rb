@@ -1,14 +1,10 @@
 describe Moneta::Api::Requests::PaymentRequest, vcr: true do
-  let(:service) { Moneta::Api::Service.new($username, $password) }
+  include_context 'moneta'
 
   describe 'payment' do
     let(:request) do
       described_class.new.tap do |request|
-        request.payee = 28988504
-        request.payer = 10999
-        request.amount = 10
-        request.is_payer_amount = false
-        request.payment_password = '12345'
+        fill_base_settings.(request)
       end
     end
 
