@@ -1,7 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/moneta-api.svg)](http://badge.fury.io/rb/moneta-api)
 [![Build Status](https://travis-ci.org/ssnikolay/moneta-api.svg?branch=master)](https://travis-ci.org/ssnikolay/moneta-api)
 [![Code Climate](https://codeclimate.com/github/ssnikolay/moneta-api/badges/gpa.svg)](https://codeclimate.com/github/ssnikolay/moneta-api)
-[![Test Coverage](https://codeclimate.com/github/ssnikolay/payanyway/badges/coverage.svg)](https://codeclimate.com/github/ssnikolay/payanyway)
+[![Test Coverage](https://codeclimate.com/github/ssnikolay/moneta-api/badges/coverage.svg)](https://codeclimate.com/github/ssnikolay/moneta-api)
 
 # moneta-api
 
