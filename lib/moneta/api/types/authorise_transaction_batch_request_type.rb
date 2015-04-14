@@ -1,3 +1,5 @@
+require_relative 'entity'
+
 module Moneta
   module Api
     module Types

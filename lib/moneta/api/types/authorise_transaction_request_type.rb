@@ -1,3 +1,7 @@
+require_relative 'key_value_attribute'
+require_relative 'operation_info'
+require_relative 'transaction_request_type'
+
 module Moneta
   module Api
     module Types
