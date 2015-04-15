@@ -1,3 +1,8 @@
+if ENV['CODECLIMATE_REPO_TOKEN']
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+end
+
 require 'rspec'
 require 'pry'
 require 'rspec/its'
@@ -19,6 +24,7 @@ VCR.configure do |config|
   config.hook_into :fakeweb
   config.filter_sensitive_data('<USERNAME>') { $username }
   config.filter_sensitive_data('<PASSWORD>') { $password }
+  config.ignore_hosts 'codeclimate.com'
 end
 
 RSpec.configure do |config|

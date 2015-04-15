@@ -6,15 +6,8 @@ module Moneta
         # @return [Moneta::Api::Responses::*]
         def build(response)
           klass, data = response.to_hash.to_a.first
-          klass = classify(klass)
 
-          Object.const_get("Moneta::Api::Responses::#{ klass }").build(data)
-        end
-
-        private
-
-        def classify(str)
-          str.to_s.split('_').map(&:capitalize).join
+          Object.const_get("Moneta::Api::Responses::#{ klass.to_s.classify }").build(data)
         end
       end
     end
