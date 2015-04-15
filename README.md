@@ -95,11 +95,10 @@ gem 'moneta-api'
   Moneta::Api::Service.new('username', 'password', { demo_mode: true })
 ```
 
-
 ## Contributing
 
-1. Fork it ( https://github.com/ssnikolay/moneta-api/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1. Стандартная схема с pull-request workflow
+2. Для локального запуска тестов необходимо создать конфигурационный файл со своими demo доступами
+```bash
+  echo "username: 'username'\r\npassword: 'password'" > spec/support/moneta.yml
+```
