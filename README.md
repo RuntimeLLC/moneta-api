@@ -32,13 +32,15 @@ gem 'moneta-api'
 #### Базовый пример
 
 ```ruby
+  require 'moneta/api'
+
   # получить данные счета
-  service = Moneta::Api::Service.new('username', 'password')
+  service = Moneta::Api::Service.new('username', 'password', { demo_mode: true })
   response = service.find_account_by_id(10999)
   puts response.class.name
   # => 'Moneta::Api::Responses::FindAccountByIdResponse'
   puts "Баланс до пополнения: #{ response.account.balance} #{ response.account.currency }"
-  # => '100 RUB'
+  # => 'Баланс до пополнения: 100 RUB'
   
   # перевод
   transfer_request = Moneta::Api::Requests::TransferRequest.new.tap do |request|
@@ -59,7 +61,7 @@ gem 'moneta-api'
   # проверить данные счета
   response = service.find_account_by_id(10999)
   puts "Баланс после пополнения: #{ response.account.balance} #{ response.account.currency }"
-  # => '110 RUB'
+  # => 'Баланс после пополнения: 110 RUB'
 ```
 
 **Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Api/ServiceMethods) доступных для обращения к MONETA.MerchantAPI.v2.**
@@ -83,14 +85,14 @@ gem 'moneta-api'
 `:logger`                  | **moneta-api** по-умолчанию пишет логи в `$STDOUT` с помощью Ruby Logger'а. Можно переопределить на любой другой Logger. (прим: `Rails.logger`)
 `:log_level`               | Используется для фильтрации вывода в лог по приоритету. Допускаются следующие значения - `:debug`, `:warn`, `:error`, `:fatal`.
 `:log`                     | Определяет нужно ли писать в log. (`true` или `false`)
-`filters`                  | Конфиденциальная информация, которую, не следует писать в log.
-`:pretty_print_xml`        | Красивый вывод в log XML запроса\ответа. (`true` или `false`)
+`filters`                  | Конфиденциальная информация, которую не следует писать в log.
+`:pretty_print_xml`        | Вывод в log XML запроса\ответа. (`true` или `false`)
 
 #### Demo режим
 Для использования тестового сервера (http://demo.moneta.ru) следует инициализировать сервис со специальным флагом
 
 ```ruby
-  service = Moneta::Api::Service.new('username', 'password', { demo_mode: true })
+  Moneta::Api::Service.new('username', 'password', { demo_mode: true })
 ```
 
 
