@@ -69,7 +69,11 @@ gem 'moneta-api'
 #### Logger
 
 ```ruby
-  Moneta::Api::Service.new('username', 'password', { logger: Rails.logger, log_level: :info, filters: [:password] })
+  Moneta::Api::Service.new('username', 'password', {
+    logger: Rails.logger,
+    log_level: :info,
+    filters: [:password]
+  })
 ```
 
 Доступны следующие настройки
