@@ -21,20 +21,9 @@ module Moneta
             properties.each_with_object({}) do |(property, _), hash|
               value = send(property)
               unless value.nil?
-                hash[ classify_with_lower(property.to_s) ] = to_hash_complex_value(value)
+                hash[ property.to_s.classify_with_lower ] = to_hash_complex_value(value)
               end
             end
-          end
-
-          def classify_with_lower(str)
-            str = classify(str)
-            str[0] = str[0].downcase
-
-            str
-          end
-
-          def classify(str)
-            str.split('_').map(&:capitalize).join
           end
 
           private

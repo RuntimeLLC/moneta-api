@@ -21,4 +21,8 @@ describe Moneta::Api::Service do
       it { is_expected.to eq 'https://www.moneta.ru/services.wsdl' }
     end
   end
+
+  describe 'request validate' do
+    it { expect { service.authorise_transaction('invalid request') }.to raise_exception(TypeError, "String can't be coerced into Moneta::Api::Requests::AuthoriseTransactionRequest") }
+  end
 end
