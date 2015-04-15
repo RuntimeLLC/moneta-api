@@ -64,7 +64,7 @@ gem 'moneta-api'
   # => 'Баланс после пополнения: 110 RUB'
 ```
 
-**Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Api/ServiceMethods) доступных для обращения к MONETA.MerchantAPI.v2.**
+**Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Api/ServiceMethods), с помощью которых вы можете обратиться к MONETA.MerchantAPI.v2**
 
 ### Настройки
 
@@ -84,9 +84,9 @@ gem 'moneta-api'
 ---------------------------|:-----------------------------------------------------------
 `:logger`                  | **moneta-api** по умолчанию пишет логи в `$STDOUT` с помощью ruby Logger'а. Можно переопределить на любой другой Logger. (прим: `Rails.logger`)
 `:log_level`               | Используется для фильтрации вывода в log по приоритету. Допускаются следующие значения - `:info`, `:debug`, `:warn`, `:error`, `:fatal`.
-`:log`                     | Определяет нужно ли писать в log. (`true` или `false`)
-`filters`                  | Конфиденциальная информация, которую не следует писать в log.
-`:pretty_print_xml`        | Определяет нужно ли выводить в log XML запроса\ответа. (`true` или `false`)
+`:log`                     | Определяет, нужно ли писать в log. (`true` или `false`)
+`:filters`                  | Конфиденциальная информация, которую не следует писать в log.
+`:pretty_print_xml`        | Определяет, нужно ли выводить в log XML запроса\ответа. (`true` или `false`)
 
 #### Demo режим
 Для использования тестового сервера (http://demo.moneta.ru) следует инициализировать сервис со специальным флагом
@@ -100,5 +100,5 @@ gem 'moneta-api'
 1. Стандартная схема с pull-request workflow
 2. Для локального запуска тестов необходимо создать конфигурационный файл со своими demo доступами
 ```bash
-  echo "username: 'username'\r\npassword: 'password'" > spec/support/moneta.yml
+  echo "username: 'username'\npassword: 'password'" > spec/support/moneta.yml
 ```
