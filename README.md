@@ -62,7 +62,7 @@ gem 'moneta-api'
   # => '110 RUB'
 ```
 
-** Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Api/ServiceMethods) доступных для обращения к MONETA.MerchantAPI.v2.** 
+**Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Api/ServiceMethods) доступных для обращения к MONETA.MerchantAPI.v2.**
 
 ### Настройки
 
