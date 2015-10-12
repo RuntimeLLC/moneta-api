@@ -3,9 +3,7 @@ module Moneta
     module String
 
       def self.included(base)
-        unless 'moneta'.respond_to?(:classify)
-          base.send(:include, Extension)
-        end
+        base.send(:include, Extension)
       end
 
       module Extension
@@ -18,7 +16,7 @@ module Moneta
         end
 
         def classify
-          dup.split('_').map(&:capitalize).join
+          defined?(super) ? super : dup.split('_').map(&:capitalize).join
         end
       end
 
