@@ -139,6 +139,10 @@ module Moneta
         call(__method__, request)
       end
 
+      def create_profile(request)
+        call(__method__, request)
+      end
+
       private
 
       def call(method, request)
@@ -147,6 +151,7 @@ module Moneta
         response = client.call(method, {
           message: request.respond_to?(:to_hash) ? request.to_hash : request
         })
+
         ResponseFactory.build(response)
       end
 
@@ -162,7 +167,8 @@ module Moneta
         {
           'find_account_by_alias' => String,
           'find_account_by_id' => Integer,
-          'get_operation_details_by_id' => Integer
+          'get_operation_details_by_id' => Integer,
+          'create_profile' => Moneta::Api::Requests::CreateProfileRequest
         }[ method.to_s ] || Object.const_get("Moneta::Api::Requests::#{ method.to_s.classify }Request")
       end
     end

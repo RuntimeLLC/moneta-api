@@ -34,7 +34,7 @@ module Moneta
 
         # @return [Array[MonetaOperationInfo]] Список операций
         #   / Transaction list
-        property :operation, Moneta::Api::Types::OperationInfo
+        property :operation, type: Moneta::Api::Types::OperationInfo
       end
     end
   end

@@ -19,7 +19,7 @@ module Moneta
         # @return [ForecastTransactionResponseType] Если операция может быть проведена, то в данном поле содержатся детали операции.
         #   Иначе - это поле пустое.
         #   / Additional information if transaction may be processed. Otherwise empty.
-        property :forecast, ForecastTransactionResponseType
+        property :forecast, type: ForecastTransactionResponseType
 
         # @return [String] Поле содержит код ошибки. Поле заполнено только тогда, когда есть описание ошибки в поле description.
         #   Для получения этого поля в запросе необходимо выставлять атрибут version равный или больше VERSION_2.

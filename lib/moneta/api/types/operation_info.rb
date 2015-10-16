@@ -71,7 +71,7 @@ module Moneta
         #     The transaction may contain several attributes with different keys.
         #     The full attribute's key consists of prefix ("customfield:") and tag (32 characters).
         #     For example, "customfield:name".
-        property :attribute, Moneta::Api::Types::KeyValueAttribute
+        property :attribute, type: Moneta::Api::Types::KeyValueAttribute
 
         # @param [Moneta::Api::Types::KeyValueAttribute]
         # @return item

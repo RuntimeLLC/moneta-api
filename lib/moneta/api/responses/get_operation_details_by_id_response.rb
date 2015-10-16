@@ -8,7 +8,7 @@ module Moneta
         include Moneta::Api::DataMapper
 
         # @return [Moneta::Api::Types::OperationInfo]
-        property :operation, Types::OperationInfo
+        property :operation, type: Types::OperationInfo
       end
     end
   end
