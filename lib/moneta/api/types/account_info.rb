@@ -53,7 +53,7 @@ module Moneta
 
         # @return [AccountAccessInfo] Информация о доступе к счету. Информация отдается, если счет является делегированным. Необязательное поле.
         #   / Account access information. Available if the account is delegated, otherwise omitted. Optional.
-        property :account_access, Moneta::Api::Types::AccountAccessInfo
+        property :account_access, type: Moneta::Api::Types::AccountAccessInfo
 
         # @return [Integer] Счет-прототип с которого берутся свойства "по умолчанию". Необязательное поле.
         #   / Prototype account for default properties values. Optional.

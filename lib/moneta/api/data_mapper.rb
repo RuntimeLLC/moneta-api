@@ -47,13 +47,14 @@ module Moneta
       end
 
       module ClassMethods
-        def property(name, base_type=nil)
-          attr_accessor(name)
+
+        def property(name, type: nil, read_only: false)
+          generate_accessors(name, read_only)
 
           # Сохраняем свойста и перезаписываем instance метод
           current_properties = instance_variable_get('@properties') || {}
           properties = instance_variable_set('@properties',
-            current_properties.merge(name => base_type).merge(parents_properties)
+            current_properties.merge(parents_properties).merge(name => type)
           )
 
           send(:define_method, :properties) { properties }
@@ -73,6 +74,11 @@ module Moneta
               end
             end
           )
+        end
+
+        def generate_accessors(name, read_only)
+          attr_reader(name)
+          attr_writer(name) unless read_only
         end
       end
     end

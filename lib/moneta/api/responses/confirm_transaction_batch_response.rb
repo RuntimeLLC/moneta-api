@@ -10,7 +10,7 @@ module Moneta
         # @return [Moneta::Api::Types::OperationInfoBatchResponseType] Детали проведенных операций, либо описание ошибок, если операция не проведена.
         #   Порядок соответствует набору операций, переданных в ConfirmTransactionBatchRequest.
         #   / Either transaction details or error description in order of appearance in corresponding request.
-        property :transaction, Types::OperationInfoBatchResponseType
+        property :transaction, type: Types::OperationInfoBatchResponseType
       end
     end
   end

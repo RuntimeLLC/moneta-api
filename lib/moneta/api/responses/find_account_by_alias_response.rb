@@ -9,7 +9,7 @@ module Moneta
         include Moneta::Api::DataMapper
 
         # @return [Moneta::Api::Types::AccountInfo]
-        property :account, Moneta::Api::Types::AccountInfo
+        property :account, type: Moneta::Api::Types::AccountInfo
       end
     end
   end

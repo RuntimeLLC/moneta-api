@@ -16,7 +16,7 @@ module Moneta
         property :error
 
         # @return [Moneta::Api::Types::TransactionResponseType]
-        property :transaction, Types::TransactionResponseType
+        property :transaction, type: Types::TransactionResponseType
 
         # @return [String] Поле содержит код ошибки. Поле заполнено только тогда, когда есть описание ошибки в поле error.
         #   Для получения этого поля в запросе необходимо выставлять атрибут version равный или больше VERSION_2.

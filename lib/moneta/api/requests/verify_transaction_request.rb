@@ -32,7 +32,7 @@ module Moneta
 
         # @return [Moneta::Api::Types::OperationInfo] Набор полей, которые необходимо использовать в качестве атрибутов операции. Значения дат в формате dd.MM.yyyy HH:mm:ss
         #   / Key-value pairs that will be used as a transaction attributes. Use format dd.MM.yyyy HH:mm:ss for date values
-        property :operation_info, Moneta::Api::Types::OperationInfo
+        property :operation_info, type: Moneta::Api::Types::OperationInfo
 
         # @return [String] Платежный пароль счета плательщика
         #   / Payment password for payer account
