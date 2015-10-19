@@ -163,6 +163,18 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::GetProfileInfoRequest]
+      # @return [Moneta::Api::Responses::GetProfileInfoResponse]
+      def get_profile_info(request)
+        call(__method__, request)
+      end
+
+      # @param [Moneta::Api::Requests::FindBankAccountsRequest]
+      # @return [Moneta::Api::Responses::FindBankAccountsResponse]
+      def find_bank_accounts(request)
+        call(__method__, request)
+      end
+
       private
 
       def call(method, request)
