@@ -151,6 +151,18 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::CreateBankAccountRequest]
+      # @return [Moneta::Api::Responses::CreateBankAccountResponse]
+      def create_bank_account(request)
+        call(__method__, request)
+      end
+
+      # @param [Moneta::Api::Requests::EditBankAccountRequest]
+      # @return [Moneta::Api::Responses::EditBankAccountResponse]
+      def edit_bank_account(request)
+        call(__method__, request)
+      end
+
       private
 
       def call(method, request)
@@ -175,9 +187,7 @@ module Moneta
         {
           'find_account_by_alias' => String,
           'find_account_by_id' => Integer,
-          'get_operation_details_by_id' => Integer,
-          'create_profile' => Moneta::Api::Requests::CreateProfileRequest,
-          'edit_profile' => Moneta::Api::Requests::EditProfileRequest
+          'get_operation_details_by_id' => Integer
         }[ method.to_s ] || Object.const_get("Moneta::Api::Requests::#{ method.to_s.classify }Request")
       end
     end

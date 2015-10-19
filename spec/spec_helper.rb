@@ -19,6 +19,16 @@ config = YAML.load(File.read(File.join(Dir.pwd, 'spec/support/moneta.yml')))
 $username = config['username']
 $password = config['password']
 
+class WebHelper
+  def self.with_real_connection
+    FakeWeb.allow_net_connect = true
+
+    VCR.turned_off do
+      yield
+    end
+  end
+end
+
 VCR.configure do |config|
   config.cassette_library_dir = File.join(Dir.pwd, 'spec/vcr')
   config.hook_into :fakeweb

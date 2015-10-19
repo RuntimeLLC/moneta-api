@@ -6,8 +6,8 @@ require 'moneta/api/version'
 Gem::Specification.new do |spec|
   spec.name          = 'moneta-api'
   spec.version       = Moneta::Api::VERSION
-  spec.authors       = ['ssnikolay']
-  spec.email         = ['ssnikolay@gmail.com']
+  spec.authors       = ['ssnikolay', 'llxff']
+  spec.email         = ['ssnikolay@gmail.com', 'll.wg.bin@gmail.com']
   spec.summary       = 'МОНЕТА.РУ (MONETA.MerchantAPI.v2)'
   spec.description   = 'МОНЕТА.РУ (MONETA.MerchantAPI.v2).'
   spec.homepage      = 'https://www.moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf'
