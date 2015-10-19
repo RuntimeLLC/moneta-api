@@ -5,20 +5,8 @@ module Moneta
         include Moneta::Api::DataMapper
 
         def to_hash
+          attributes = Moneta::Api::KeyValueSerializer.serialize(self)
           { 'attribute' => attributes } if attributes.any?
-        end
-
-        private
-
-        def attributes
-          @_attributes ||= begin
-            properties.collect do |property, _|
-              value = send(property)
-              key = property.to_s.swapcase
-
-              KeyValueAttribute.build(key: key, value: value).to_hash unless value.nil?
-            end.compact
-          end
         end
       end
     end
