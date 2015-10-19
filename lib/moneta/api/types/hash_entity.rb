@@ -16,7 +16,7 @@ module Moneta
               value = send(property)
               key = property.to_s.swapcase
 
-              KeyValueAttribute.build(key: key, value: value) unless value.nil?
+              KeyValueAttribute.build(key: key, value: value).to_hash unless value.nil?
             end.compact
           end
         end

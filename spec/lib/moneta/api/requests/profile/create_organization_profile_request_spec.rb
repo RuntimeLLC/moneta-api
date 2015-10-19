@@ -16,8 +16,8 @@ describe Moneta::Api::Requests::Profile::CreateOrganizationProfileRequest, vcr: 
     let(:params) do
       {
         profile: {
-          fio_director: 'Piter Pen',
-          organization_name: 'Runtime LLC'
+          fio_director: 'Peter Pan',
+          organization_name: 'The Lost Boys'
         }
       }
     end
