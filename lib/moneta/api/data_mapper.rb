@@ -3,51 +3,9 @@ module Moneta
     module DataMapper
       def self.included(base)
         base.extend ClassMethods
-
-        base.class_eval do
-          def fill(data)
-            properties.each do |property, type|
-              value = data[ property ]
-              if value
-                property_value = type.nil? ? value : build_complex_value(type, value)
-                instance_variable_set("@#{ property }", property_value)
-              end
-            end
-
-            self
-          end
-
-          def to_hash
-            properties.each_with_object({}) do |(property, _), hash|
-              value = send(property)
-              unless value.nil?
-                hash[ property.to_s.classify_with_lower ] = to_hash_complex_value(value)
-              end
-            end
-          end
-
-          private
-
-          def build_complex_value(type, value)
-            value.kind_of?(Array) ?
-              value.map { |v| type.build(v) } :
-              type.build(value)
-          end
-
-          def to_hash_complex_value(value)
-            if value.kind_of?(Array)
-              value.map(&:to_hash)
-            elsif value.respond_to?(:to_hash)
-              value.to_hash
-            else
-              value
-            end
-          end
-        end
       end
 
       module ClassMethods
-
         def property(name, type: nil, read_only: false)
           generate_accessors(name, read_only)
 
@@ -79,6 +37,45 @@ module Moneta
         def generate_accessors(name, read_only)
           attr_reader(name)
           attr_writer(name) unless read_only
+        end
+      end
+
+      def fill(data)
+        properties.each do |property, type|
+          value = data[ property ]
+          if value
+            property_value = type.nil? ? value : build_complex_value(type, value)
+            instance_variable_set("@#{ property }", property_value)
+          end
+        end
+
+        self
+      end
+
+      def to_hash
+        properties.each_with_object({}) do |(property, _), hash|
+          value = send(property)
+          unless value.nil?
+            hash[ property.to_s.classify_with_lower ] = to_hash_complex_value(value)
+          end
+        end
+      end
+
+      private
+
+      def build_complex_value(type, value)
+        value.kind_of?(Array) ?
+            value.map { |v| type.build(v) } :
+            type.build(value)
+      end
+
+      def to_hash_complex_value(value)
+        if value.kind_of?(Array)
+          value.map(&:to_hash)
+        elsif value.respond_to?(:to_hash)
+          value.to_hash
+        else
+          value
         end
       end
     end
