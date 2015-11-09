@@ -185,6 +185,8 @@ module Moneta
         })
 
         ResponseFactory.build(response)
+      rescue Savon::SOAPFault => e
+        raise Moneta::Api::RuntimeException.new(e.message)
       end
 
       def validate!(method, request)
