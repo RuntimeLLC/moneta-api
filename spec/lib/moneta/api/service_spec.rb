@@ -3,9 +3,19 @@ describe Moneta::Api::Service do
   let(:service) { described_class.new($username, $password, params) }
 
   describe '#find_account_by_id', vcr: true do
-    subject { service.find_account_by_id(10999) }
+    subject { service.find_account_by_id(account_id) }
 
-    its('account.id') { is_expected.to eq '10999' }
+    context 'when success response' do
+      let(:account_id) { 10999 }
+
+      its('account.id') { is_expected.to eq '10999' }
+    end
+
+    context 'when soap raise error' do
+      let(:account_id) { -1 }
+
+      it { expect { subject }.to raise_exception(Moneta::Api::RuntimeException, '(SOAP-ENV:Client) Validation error') }
+    end
   end
 
   describe 'wsdl url' do
