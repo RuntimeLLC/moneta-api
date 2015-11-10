@@ -4,6 +4,7 @@
     - 2.0.0
     - 2.1
     - 2.2
+    - 2.2.3
   before_script:
     - cp spec/support/moneta.example.yml spec/support/moneta.yml
   script:
