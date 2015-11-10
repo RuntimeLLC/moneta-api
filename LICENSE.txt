@@ -1,4 +1,4 @@
-Copyright (c) 2015 ssnikolay
+Copyright (c) 2015 Runtime
 
 MIT License
 
