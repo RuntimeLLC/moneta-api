@@ -9,7 +9,7 @@ describe Moneta::Api::Requests::ApprovePhoneSendConfirmationRequest, vcr: true d
 
   before { request.fill(params) }
 
-  subject { response.attribute }
+  subject { response }
 
-  its([:phone_number]) { is_expected.to eq('+79520348677') }
+  its(:phone_number) { is_expected.to eq('+79520348677') }
 end

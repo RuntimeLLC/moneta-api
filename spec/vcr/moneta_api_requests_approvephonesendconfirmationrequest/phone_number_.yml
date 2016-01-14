@@ -21,7 +21,7 @@ http_interactions:
       server:
       - nginx
       date:
-      - Thu, 14 Jan 2016 15:32:06 GMT
+      - Thu, 14 Jan 2016 15:52:45 GMT
       content-type:
       - text/xml
       transfer-encoding:
@@ -13649,7 +13649,7 @@ http_interactions:
         CiAgICAgIDwvd3NkbDpwb3J0PgogICA8L3dzZGw6c2VydmljZT4KPC93c2Rs
         OmRlZmluaXRpb25zPg==
     http_version: '1.1'
-  recorded_at: Thu, 14 Jan 2016 15:32:08 GMT
+  recorded_at: Thu, 14 Jan 2016 15:52:47 GMT
 - request:
     method: post
     uri: https://demo.moneta.ru/services
@@ -13660,7 +13660,7 @@ http_interactions:
         xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.moneta.ru/schemas/messages.xsd"><env:Header><wsse:Security
         xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
         wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username><USERNAME></wsse:Username><wsse:Password
-        Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"><PASSWORD></wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:ApprovePhoneSendConfirmationRequest><ins0:text>Ваш
+        Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"><PASSWORD></wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:ApprovePhoneSendConfirmationRequest><ins0:unitId>42868</ins0:unitId><ins0:text>Ваш
         код для подтверждения {CODE}</ins0:text></ins0:ApprovePhoneSendConfirmationRequest></env:Body></env:Envelope>
     headers:
       soapaction:
@@ -13668,7 +13668,7 @@ http_interactions:
       content-type:
       - text/xml;charset=UTF-8
       content-length:
-      - '1030'
+      - '1062'
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -13677,17 +13677,17 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
       server:
       - nginx
       date:
-      - Thu, 14 Jan 2016 15:32:08 GMT
+      - Thu, 14 Jan 2016 15:52:46 GMT
       content-type:
       - text/xml;charset=utf-8
       content-length:
-      - '437'
+      - '333'
       connection:
       - keep-alive
       keep-alive:
@@ -13699,18 +13699,9 @@ http_interactions:
       soapaction:
       - '""'
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOlNPQVAtRU5WPSJodHRwOi8vc2No
-        ZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VudmVsb3BlLyI+PFNPQVAtRU5WOkhl
-        YWRlci8+PFNPQVAtRU5WOkJvZHk+PFNPQVAtRU5WOkZhdWx0PjxmYXVsdGNv
-        ZGU+U09BUC1FTlY6Q2xpZW50PC9mYXVsdGNvZGU+PGZhdWx0c3RyaW5nIHht
-        bDpsYW5nPSJydSI+0J3QtSDRg9C60LDQt9Cw0L0g0YHQvtGC0L7QstGL0Lkg
-        0YLQtdC70LXRhNC+0L08L2ZhdWx0c3RyaW5nPjxkZXRhaWw+PG1lc3NhZ2Vz
-        OmZhdWx0RGV0YWlsIHhtbG5zOm1lc3NhZ2VzPSJodHRwOi8vd3d3Lm1vbmV0
-        YS5ydS9zY2hlbWFzL21lc3NhZ2VzLnhzZCI+NTAwLjMuMi40NzwvbWVzc2Fn
-        ZXM6ZmF1bHREZXRhaWw+PC9kZXRhaWw+PC9TT0FQLUVOVjpGYXVsdD48L1NP
-        QVAtRU5WOkJvZHk+PC9TT0FQLUVOVjpFbnZlbG9wZT4=
+      encoding: UTF-8
+      string: <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:ApprovePhoneSendConfirmationResponse
+        xmlns:ns2="http://www.moneta.ru/schemas/messages.xsd"><ns2:phoneNumber>+79520348677</ns2:phoneNumber></ns2:ApprovePhoneSendConfirmationResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
     http_version: '1.1'
-  recorded_at: Thu, 14 Jan 2016 15:32:08 GMT
+  recorded_at: Thu, 14 Jan 2016 15:52:48 GMT
 recorded_with: VCR 2.9.3

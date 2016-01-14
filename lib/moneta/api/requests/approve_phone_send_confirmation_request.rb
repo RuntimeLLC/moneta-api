@@ -10,7 +10,7 @@ module Moneta
         # @return [Integer] ID пользователя в системе МОНЕТА.РУ.
         #   / Если это поле не задано, то используется текущий пользователь.
         #   / Необязательный элемент.
-        property :unitId
+        property :unit_id
 
         # @return [Integer] Необязательный элемент.
         property :profile_id
