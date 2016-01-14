@@ -82,6 +82,10 @@ module Moneta
             raise TypeError.new("TypeError: can't convert #{ item.class } into Moneta::Api::Types::KeyValueAttribute")
           end
         end
+
+        def get_attribute(attribute_name)
+          Array(@attribute).detect { |attribute| attribute.key.to_s == attribute_name.to_s }
+        end
       end
     end
   end
