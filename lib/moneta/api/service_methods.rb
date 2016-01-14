@@ -175,6 +175,12 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::ApprovePhoneSendConfirmationRequest]
+      # @return [Moneta::Api::Responses::ApprovePhoneSendConfirmationResponse]
+      def approve_phone_send_confirmation(request)
+        call(__method__, request)
+      end
+
       private
 
       def call(method, request)
