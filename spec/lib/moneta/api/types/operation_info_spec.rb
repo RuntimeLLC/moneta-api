@@ -20,4 +20,14 @@ describe Moneta::Api::Types::OperationInfo do
       it { expect{ subject }.to raise_error(TypeError) }
     end
   end
+
+  describe '#get_attribute' do
+    before do
+      operation_info.add_attribute(Moneta::Api::Types::KeyValueAttribute.new.fill(key: 'key', value: 'value'))
+    end
+
+    subject { operation_info.get_attribute('key') }
+
+    it { is_expected.to be_a Moneta::Api::Types::KeyValueAttribute }
+  end
 end
