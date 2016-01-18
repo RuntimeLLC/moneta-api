@@ -1,5 +1,5 @@
 module Moneta
   module Api
-    class RuntimeException < StandardError; end
+    class RuntimeException < Exception; end
   end
 end
