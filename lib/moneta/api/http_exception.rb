@@ -1,5 +1,5 @@
 module Moneta
   module Api
-    class HTTPException < StandardError; end
+    class HTTPException < Exception; end
   end
 end
