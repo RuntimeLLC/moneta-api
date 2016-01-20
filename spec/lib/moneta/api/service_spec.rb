@@ -14,7 +14,7 @@ describe Moneta::Api::Service do
     context 'when soap raise error' do
       let(:account_id) { -1 }
 
-      it { expect { subject }.to raise_exception(Moneta::Api::RuntimeException, '(SOAP-ENV:Client) Validation error') }
+      it { expect { subject }.to raise_exception(Moneta::Api::RuntimeException, 'Validation error') }
     end
 
     context 'when soap http error' do
