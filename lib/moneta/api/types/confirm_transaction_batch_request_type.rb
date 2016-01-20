@@ -31,14 +31,13 @@ module Moneta
         #   Операции выполняются в том порядке, в котором они переданы в запросе.
         #   / Set of transfers to be processed in one batch. Processed in order of appearance.
         #
-        # @param [Moneta::Api::Types::Entity*]
+        # @param [Moneta::Api::Types::ConfirmTransactionRequestType]
         # @return void
         def add_transaction(item)
-          parents = item.class.ancestors
-          if parents.include?(Moneta::Api::Types::Entity)
+          if item.is_a?(Moneta::Api::Types::ConfirmTransactionRequestType)
             (@transaction ||=[]).push(item)
           else
-            raise TypeError.new("TypeError: #{ item.class } have not parent Moneta::Api::Types::Entity")
+            raise TypeError.new("TypeError: #{ item.class } should be a Moneta::Api::Types::ConfirmTransactionRequestType")
           end
         end
       end
