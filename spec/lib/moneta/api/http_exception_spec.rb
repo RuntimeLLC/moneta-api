@@ -2,7 +2,7 @@ describe Moneta::Api::HTTPException do
   let(:message) { 'Server Error' }
   let(:code) { '500' }
 
-  let(:exception) { described_class.new(code, message) }
+  let(:exception) { described_class.new(message).tap { |e| e.code = code } }
 
   describe '.to_hash' do
     subject { exception.to_hash }

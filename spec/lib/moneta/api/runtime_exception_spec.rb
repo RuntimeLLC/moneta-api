@@ -3,7 +3,12 @@ describe Moneta::Api::RuntimeException do
   let(:code) { 'SOAP-ENV:Client' }
   let(:detail) { { foo: ['bar'] } }
 
-  let(:exception) { described_class.new(code, message, detail) }
+  let(:exception) do
+    described_class.new(message).tap do |e|
+      e.code = code
+      e.detail = detail
+    end
+ end
 
   describe '.to_hash' do
     subject { exception.to_hash }

@@ -1,17 +1,10 @@
 module Moneta
   module Api
     class HTTPException < Exception
-      attr_reader :code
-
-      def initialize(code, message)
-        super(message)
-
-        @code = code
-      end
-
+      attr_accessor :code
 
       def inspect
-        "#{ @code }: #{ message }"
+        "#{ code }: #{ message }"
       end
 
       def to_hash

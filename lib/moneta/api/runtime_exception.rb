@@ -1,17 +1,10 @@
 module Moneta
   module Api
     class RuntimeException < Exception
-      attr_reader :code, :detail
-
-      def initialize(code, message, detail)
-        super(message)
-
-        @code = code
-        @detail = detail
-      end
+      attr_accessor :code, :detail
 
       def inspect
-        error = [ "#{ @code }: #{ message }" ]
+        error = [ "#{ code }: #{ message }" ]
         error += detail.collect { |key, value| "#{ key }: #{ Array(value).join($/) }" }
         error.join($/)
       end
