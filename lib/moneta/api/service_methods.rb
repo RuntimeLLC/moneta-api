@@ -192,9 +192,18 @@ module Moneta
 
         ResponseFactory.build(response)
       rescue Savon::SOAPFault => e
-        raise Moneta::Api::RuntimeException.new(e.message)
+        error_details = e.to_hash[:fault]
+
+        message = error_details[:faultstring]
+        code = error_details[:faultcode]
+        detail = error_details[:detail]
+
+        raise Moneta::Api::RuntimeException.new(code, message, detail)
       rescue Savon::HTTPError => e
-        raise Moneta::Api::HTTPException.new(e.message)
+        http = e.http
+        raise Moneta::Api::HTTPException.new(http.code, http.body)
+      rescue HTTPI::Error => e
+        raise Moneta::Api::ConnectionException.new(e.message)
       end
 
       def validate!(method, request)

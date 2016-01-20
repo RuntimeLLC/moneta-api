@@ -9,6 +9,7 @@ require 'moneta/api/key_value_serializer'
 require 'moneta/api/exception'
 require 'moneta/api/runtime_exception'
 require 'moneta/api/http_exception'
+require 'moneta/api/connection_exception'
 
 require 'moneta/api/types/account_access_info'
 require 'moneta/api/types/account_info'
