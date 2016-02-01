@@ -181,6 +181,12 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::ApprovePhoneApplyCodeRequest]
+      # @return [Moneta::Api::Responses::ApprovePhoneApplyCodeResponse]
+      def approve_phone_apply_code(request)
+        call(__method__, request)
+      end
+
       private
 
       def call(method, request)
