@@ -74,6 +74,7 @@ gem 'moneta-api'
   Moneta::Api::Service.new('username', 'password', {
     logger: Rails.logger,
     log_level: :info,
+    log: true,
     filters: [:password]
   })
 ```
