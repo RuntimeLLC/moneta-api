@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/moneta-api.svg)](http://badge.fury.io/rb/moneta-api)
-[![Build Status](https://travis-ci.org/ssnikolay/moneta-api.svg?branch=master)](https://travis-ci.org/ssnikolay/moneta-api)
+[![Build Status](https://travis-ci.org/RuntimeLLC/moneta-api.svg?branch=master)](https://travis-ci.org/RuntimeLLC/moneta-api)
 [![Code Climate](https://codeclimate.com/github/ssnikolay/moneta-api/badges/gpa.svg)](https://codeclimate.com/github/ssnikolay/moneta-api)
 [![Test Coverage](https://codeclimate.com/github/ssnikolay/moneta-api/badges/coverage.svg)](https://codeclimate.com/github/ssnikolay/moneta-api)
 [![Inline docs](http://inch-ci.org/github/ssnikolay/moneta-api.svg?branch=master)](http://inch-ci.org/github/ssnikolay/moneta-api)
