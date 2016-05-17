@@ -1,5 +1,6 @@
 require 'moneta/api/version'
 require 'savon'
+
 require 'moneta/core_ext/string'
 require 'moneta/api/service_methods'
 require 'moneta/api/service'
