@@ -115,6 +115,12 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::TransferBatchRequest]
+      # @return [Moneta::Api::Responses::TransferBatchResponse]
+      def transfer_batch(request)
+        call(__method__, request)
+      end
+
       # @param [Moneta::Api::Requests::PaymentRequest]
       # @return [Moneta::Api::Responses::PaymentResponse]
       def payment(request)

@@ -4,7 +4,7 @@ module Moneta
       # Тип, описывающий параметры операции в запросах в пакетном режиме.
       # Transaction parameters type for requests in batch processing mode.
 
-      class AuthoriseTransactionBatchRequestType < Entity
+      class TransferBatchRequestType < Entity
         # @return [Boolean] Флаг, указывающий выполнять ли все денежные переводы в одной транзакции.
         #   Если transactional = true, то:
         #   при возникновении ошибки все проведенные операции будут отменены
