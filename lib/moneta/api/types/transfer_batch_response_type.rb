@@ -4,7 +4,7 @@ module Moneta
       class TransferBatchResponseType
         include Moneta::Api::DataMapper
 
-        property :transaction, type: Moneta::Api::Responses::TransferResponse
+        property :transaction, type: Moneta::Api::Types::TransactionResponseType
       end
     end
   end
