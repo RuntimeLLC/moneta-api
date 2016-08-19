@@ -16,5 +16,5 @@ describe Moneta::Api::Requests::GetProfileInfoRequest, vcr: true do
   its([:profileType]) { is_expected.to eq(value: 'client', approved: false) }
   its([:name]) { is_expected.to eq(value: 'Мономах Владимир', approved: false) }
   its([:unitid]) { is_expected.to eq(value: '42868', approved: false) }
-  its([:cell_phone]) { is_expected.to eq(value: '+79520348677', approved: false) }
+  its([:cell_phone]) { is_expected.to eq(value: '79520348677', approved: false) }
 end
