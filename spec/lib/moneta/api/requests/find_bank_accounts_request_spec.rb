@@ -8,7 +8,7 @@ describe Moneta::Api::Requests::FindBankAccountsRequest, vcr: true do
 
   subject { response.bank_account }
 
-  its(:count) { is_expected.to eq 2 }
+  its(:count) { is_expected.to eq 4 }
 
   describe 'first account' do
     let(:bank_account) { response.get_account(1182) }
