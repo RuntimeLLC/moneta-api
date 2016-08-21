@@ -9,8 +9,7 @@ describe Moneta::Api::Requests::EditBankAccountRequest, vcr: true do
       id: id,
       attribute: {
         bik: '044525225',
-        account: '30301810000006000001',
-        bank: 'ФИЛИАЛ "БАЙКОНУР" ОАО "СОБИНБАНК"'
+        account: '30301810000006000001'
       }
     }
   end
