@@ -7,15 +7,15 @@ module Moneta
       end
 
       module Extension
-        def classify_with_lower
+        def camelize_with_lower
           str = dup
-          str = str.classify
+          str = str.camelize
           str[0] = str[0].downcase
 
           str
         end
 
-        def classify
+        def camelize
           defined?(super) ? super : dup.split('_').map(&:capitalize).join
         end
       end

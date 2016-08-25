@@ -235,7 +235,7 @@ module Moneta
           'find_account_by_alias' => String,
           'find_account_by_id' => Integer,
           'get_operation_details_by_id' => Integer
-        }[ method.to_s ] || Object.const_get("Moneta::Api::Requests::#{ method.to_s.classify }Request")
+        }[ method.to_s ] || Object.const_get("Moneta::Api::Requests::#{ method.to_s.camelize }Request")
       end
     end
   end

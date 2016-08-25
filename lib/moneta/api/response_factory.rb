@@ -7,7 +7,7 @@ module Moneta
         def build(response)
           klass, data = response.to_hash.to_a.first
 
-          Object.const_get("Moneta::Api::Responses::#{ klass.to_s.classify }").build(data)
+          Object.const_get("Moneta::Api::Responses::#{ klass.to_s.camelize }").build(data)
         end
       end
     end
