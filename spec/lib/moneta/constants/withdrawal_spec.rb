@@ -46,4 +46,22 @@ describe 'Moneta withdrawal types' do
 
     it { is_expected.to eq 255 }
   end
+
+  describe 'Webmoney WMR' do
+    subject { Moneta::Constants::Withdrawal::Webmoney::WMR }
+
+    it { is_expected.to eq 2 }
+  end
+
+  describe 'Webmoney WMZ' do
+    subject { Moneta::Constants::Withdrawal::Webmoney::WMZ }
+
+    it { is_expected.to eq 3 }
+  end
+
+  describe 'Webmoney WME' do
+    subject { Moneta::Constants::Withdrawal::Webmoney::WME }
+
+    it { is_expected.to eq 4 }
+  end
 end
