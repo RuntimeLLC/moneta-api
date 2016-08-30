@@ -9,6 +9,12 @@ module Moneta
       CARD_ALFA_BANK = 279
       MAIL_MONEY = 268
       QIWI = 255
+
+      module Webmoney
+        WMR = 2
+        WMZ = 3
+        WME = 4
+      end
     end
   end
 end
