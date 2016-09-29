@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['ssnikolay@gmail.com', 'll.wg.bin@gmail.com']
   spec.summary       = 'МОНЕТА.РУ (MONETA.MerchantAPI.v2)'
   spec.description   = 'МОНЕТА.РУ (MONETA.MerchantAPI.v2).'
-  spec.homepage      = 'https://www.moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf'
+  spec.homepage      = 'https://github.com/RuntimeLLC/moneta-api'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
