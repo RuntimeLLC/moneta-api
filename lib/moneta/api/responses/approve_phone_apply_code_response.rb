@@ -5,7 +5,9 @@ module Moneta
       # Если в процессе подтверждения сотового телефона произошла ошибка, то возникнет Exception.
       # Если Exception не возник - значит сотовый телефон гарантированно подтвержден.
 
-      class ApprovePhoneApplyCodeResponse; end
+      class ApprovePhoneApplyCodeResponse
+        include Moneta::Api::DataMapper
+      end
     end
   end
 end
