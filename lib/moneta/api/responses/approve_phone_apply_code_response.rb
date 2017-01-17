@@ -7,6 +7,10 @@ module Moneta
 
       class ApprovePhoneApplyCodeResponse
         include Moneta::Api::DataMapper
+
+        def properties
+          []
+        end
       end
     end
   end
