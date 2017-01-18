@@ -6,7 +6,7 @@
     - 2.2
     - 2.3
     - 2.4
-  before_install: "rm Gemfile.lock"
+  before_install: "rm ${BUNDLE_GEMFILE}.lock"
   before_script:
     - cp spec/support/moneta.example.yml spec/support/moneta.yml
     - bundle update
