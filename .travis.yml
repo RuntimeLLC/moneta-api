@@ -1,12 +1,10 @@
   language: ruby
 
   rvm:
-    - 2.0.0
-    - 2.1
-    - 2.2
-    - 2.3
+    - 2.1.9
+    - 2.2.5
+    - 2.3.1
     - 2.4
-  before_install: "rm ${BUNDLE_GEMFILE}.lock"
   before_script:
     - cp spec/support/moneta.example.yml spec/support/moneta.yml
     - bundle update
