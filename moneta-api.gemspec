@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-its'
   spec.add_development_dependency 'vcr'
-  spec.add_development_dependency 'fakeweb'
+  spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'yard'
   spec.add_development_dependency 'codeclimate-test-reporter'
 end
