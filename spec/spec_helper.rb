@@ -1,6 +1,6 @@
 if ENV['CODECLIMATE_REPO_TOKEN']
-  require 'codeclimate-test-reporter'
-  CodeClimate::TestReporter.start
+  require 'simplecov'
+  SimpleCov.start
 end
 
 require 'rspec'
@@ -9,6 +9,7 @@ require 'rspec/its'
 require 'moneta/api'
 require 'yaml'
 require 'vcr'
+require 'webmock/rspec'
 
 Dir['spec/support/**/*.rb'].each do |file|
   require File.join(File.dirname(__FILE__), '..', file)
@@ -21,7 +22,7 @@ $password = config['password']
 
 class WebHelper
   def self.with_real_connection
-    FakeWeb.allow_net_connect = true
+    WebMock.allow_net_connect!
 
     VCR.turned_off do
       yield
@@ -31,7 +32,7 @@ end
 
 VCR.configure do |config|
   config.cassette_library_dir = File.join(Dir.pwd, 'spec/vcr')
-  config.hook_into :fakeweb
+  config.hook_into :webmock
   config.filter_sensitive_data('<USERNAME>') { $username }
   config.filter_sensitive_data('<PASSWORD>') { $password }
   config.ignore_hosts 'codeclimate.com'
