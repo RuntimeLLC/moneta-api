@@ -4,8 +4,11 @@
     - 2.0.0
     - 2.1
     - 2.2
-    - 2.2.3
+    - 2.3
+    - 2.4
+  before_install: "rm ${BUNDLE_GEMFILE}.lock"
   before_script:
     - cp spec/support/moneta.example.yml spec/support/moneta.yml
+    - bundle update
   script:
     - CODECLIMATE_REPO_TOKEN=d10be753ffa1a760be2df97c61673629a3fa86270cdd898250b8366213b0799c bundle exec rspec
