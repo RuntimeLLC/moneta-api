@@ -3,6 +3,7 @@ module Moneta
     class Service
       DEMO = 'https://demo.moneta.ru/services.wsdl'
       PRODUCTION = 'https://www.moneta.ru/services.wsdl'
+      NAMESPACE = 'http://www.moneta.ru/schemas/messages.xsd'
 
       include ServiceMethods
       attr_reader :client
@@ -16,9 +17,11 @@ module Moneta
       def prepare_params(username, password, params)
         demo_mode = params.delete(:demo_mode)
 
-        { wsse_auth: [ username, password ] }
-          .merge(params)
-          .merge(wsdl: wsdl_url(demo_mode))
+        {
+          wsse_auth: [ username, password ],
+          wsdl: wsdl_url(demo_mode),
+          namespace: NAMESPACE
+        }.merge(params)
       end
 
       def wsdl_url(demo_mode)
