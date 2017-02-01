@@ -133,6 +133,12 @@ module Moneta
         call(__method__, request)
       end
 
+      # @param [Moneta::Api::Requests::VerifyPaymentBatchRequest]
+      # @return [Moneta::Api::Responses::VerifyPaymentBatchResponse]
+      def verify_payment_batch(request)
+        call(__method__, request)
+      end
+
       # @param [Moneta::Api::Requests::VerifyTransferRequest]
       # @return [Moneta::Api::Responses::VerifyTransferResponse]
       def verify_transfer(request)
