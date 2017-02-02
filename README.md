@@ -29,20 +29,27 @@ gem 'moneta-api'
 
 ## Использование
 
-#### Базовый пример
+### Примеры
+
+#### Получить данные счета
 
 ```ruby
   require 'moneta/api'
 
   # получить данные счета
   service = Moneta::Api::Service.new('username', 'password', { demo_mode: true })
+
   response = service.find_account_by_id(10999)
+
   puts response.class.name
   # => 'Moneta::Api::Responses::FindAccountByIdResponse'
-  puts "Баланс до пополнения: #{ response.account.balance} #{ response.account.currency }"
-  # => 'Баланс до пополнения: 100 RUB'
-  
-  # перевод
+  puts "Баланс: #{ response.account.balance} #{ response.account.currency }"
+  # => 'Баланс: 100 RUB'
+```
+
+#### Перевод на другой счет в Монета.ру
+
+```ruby
   transfer_request = Moneta::Api::Requests::TransferRequest.new.tap do |request|
     request.payee = 28988504
     request.payer = 10999
@@ -50,18 +57,35 @@ gem 'moneta-api'
     request.is_payer_amount = false
     request.payment_password = '123456'
   end
+
   response = service.transfer(transfer_request)
-  
-  # данные транзакции
-  puts response.class.name
-  # => 'Moneta::Api::Responses::TransferResponse'
-  puts response.status
-  # => 'SUCCEED'
-  
+
   # проверить данные счета
   response = service.find_account_by_id(10999)
   puts "Баланс после пополнения: #{ response.account.balance} #{ response.account.currency }"
   # => 'Баланс после пополнения: 110 RUB'
+```
+
+#### Вывод денег со счета в QIWI
+
+```ruby
+  withdrawal_request = Moneta::Api::Requests::PaymentRequest.build(
+    payer: 28988504,
+    payee: Moneta::Constants::Withdrawal::QIWI,
+    amount: 10,
+    client_transaction: SecureRandom.uuid,
+    payment_password: '123456',
+    is_payer_amount: true
+  )
+
+  withdraw_to = Moneta::Api::Types::KeyValueAttribute.build(key: 'EXTERNALACCOUNTID', value: qiwi_account)
+
+  withdrawal_info = Moneta::Api::Types::OperationInfo.new
+  withdrawal_info.add_attribute(withdraw_to)
+
+  withdrawal_request.operation_info = withdrawal_info
+
+  service.payment(withdrawal_request)
 ```
 
 **Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Api/ServiceMethods), с помощью которых вы можете обратиться к MONETA.MerchantAPI.v2**
