@@ -55,7 +55,8 @@ describe Moneta::Api::Requests::VerifyPaymentBatchRequest do
         ]
       end
 
-      its('transaction.transaction') { is_expected.to be_a_kind_of(Moneta::Api::Types::OperationInfo) }
+      its(:transaction) { is_expected.to be_a_kind_of(Moneta::Api::Types::VerifyTransactionResponseType) }
+      its('transaction.forecast') { is_expected.to be_a_kind_of(Moneta::Api::Types::ForecastTransactionResponseType) }
     end
 
     context 'when two operations' do
@@ -66,7 +67,8 @@ describe Moneta::Api::Requests::VerifyPaymentBatchRequest do
         ]
       end
 
-      its('transaction.first.transaction') { is_expected.to be_a_kind_of(Moneta::Api::Types::OperationInfo) }
+      its('transaction.count') { is_expected.to eq 2 }
+      its('transaction.first.forecast') { is_expected.to be_a_kind_of(Moneta::Api::Types::ForecastTransactionResponseType) }
     end
   end
 end
