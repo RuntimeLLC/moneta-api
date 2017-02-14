@@ -5,6 +5,7 @@ module Moneta
 
       class ApprovePhoneSendConfirmationResponse
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         # @return[String] Номер телефона, на который было послано sms сообщение.
         property :phone_number

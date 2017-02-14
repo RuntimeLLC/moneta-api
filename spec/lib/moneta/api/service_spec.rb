@@ -8,7 +8,7 @@ describe Moneta::Api::Service do
     context 'when success response' do
       let(:account_id) { 10999 }
 
-      its('account.id') { is_expected.to eq '10999' }
+      its('account.id') { is_expected.to eq 10999 }
     end
 
     context 'when soap raise error' do
@@ -24,17 +24,17 @@ describe Moneta::Api::Service do
     end
   end
 
-  describe 'wsdl url' do
-    subject{ service.client.globals.instance_variable_get('@options')[:wsdl] }
+  describe 'service url' do
+    subject{ service.instance_variable_get('@connection') }
 
     context 'when demo mode' do
-      it { is_expected.to eq 'https://demo.moneta.ru/services.wsdl' }
+      its(:host) { is_expected.to eq 'demo.moneta.ru' }
     end
 
     context 'when demo mode' do
       let(:params) { {} }
 
-      it { is_expected.to eq 'https://www.moneta.ru/services.wsdl' }
+      its(:host) { is_expected.to eq 'www.moneta.ru' }
     end
   end
 

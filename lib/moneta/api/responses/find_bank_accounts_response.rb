@@ -3,6 +3,7 @@ module Moneta
     module Responses
       class FindBankAccountsResponse
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         # Ответ, который содержит список банковских счетов.
         # Bank Accounts searching response containing the list of bank accounts.

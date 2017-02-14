@@ -6,6 +6,7 @@ module Moneta
 
       class GetAccountPaymentPasswordChallengeResponse
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         # @return [String] Запрос для платежного пароля
         #   / Challenge of payment password

@@ -6,6 +6,7 @@ module Moneta
 
       class TransferBatchResponse
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         # @return [Array[Moneta::Api::Types::TransactionBatchResponseType]] Детали проведенных операций, либо описание ошибок, если операция не проведена.
         #   Порядок соответствует набору операций, переданных в TransferBatchRequest.

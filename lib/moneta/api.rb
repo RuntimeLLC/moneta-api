@@ -1,8 +1,9 @@
 require 'moneta/api/version'
-require 'savon'
+require 'faraday'
 
 require 'moneta/core_ext/string'
 require 'moneta/constants/withdrawal'
+require 'moneta/api/options'
 require 'moneta/api/service_methods'
 require 'moneta/api/service'
 require 'moneta/api/data_mapper'
@@ -82,6 +83,7 @@ require 'moneta/api/requests/profile/edit_client_profile_request'
 require 'moneta/api/requests/profile/create_organization_profile_request'
 require 'moneta/api/requests/profile/edit_organization_profile_request'
 
+require 'moneta/api/responses/response_property_mapper'
 require 'moneta/api/responses/key_value_response'
 require 'moneta/api/responses/bank_account_info'
 require 'moneta/api/responses/authorise_transaction_batch_response'

@@ -4,7 +4,9 @@ module Moneta
       # Запрос на завершение (подтверждение) операции.
       # Transaction confirmation request.
 
-      class ConfirmTransactionResponse < Types::OperationInfo; end
+      class ConfirmTransactionResponse < Types::OperationInfo
+        include ResponsePropertyMapper
+      end
     end
   end
 end

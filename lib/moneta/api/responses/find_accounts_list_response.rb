@@ -6,6 +6,7 @@ module Moneta
         # Accounts searching response containing the list of accounts.
 
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         # @return[Array[Moneta::Api::Types::AccountInfo]]
         property :account, type: Moneta::Api::Types::AccountInfo

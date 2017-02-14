@@ -3,6 +3,7 @@ module Moneta
     module Responses
       class CreateProfileResponse
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         # @return [String] Идентификатор профайла в системе МОНЕТА.РУ
         #   Profile id

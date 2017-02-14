@@ -3,6 +3,7 @@ module Moneta
     module Responses
       class EditProfileResponse
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         # @return [Boolean] Статус операции, всегда true
         #   / Operation status. Always is true.

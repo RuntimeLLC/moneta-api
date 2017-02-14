@@ -201,31 +201,32 @@ module Moneta
 
       private
 
-      def call(method, request)
-        validate!(method, request)
+      def call(method_id, request)
+        validate!(method_id, request)
 
-        response = client.call(method, {
-          message: request.respond_to?(:to_hash) ? request.to_hash : request
-        })
+        response = call_method(method_id, request)
 
-        ResponseFactory.build(response)
-      rescue Savon::SOAPFault => e
-        details = e.to_hash[:fault]
+        json = JSON.parse(response.body)
 
-        exception = Moneta::Api::RuntimeException.new(details[:faultstring])
-        exception.code = details[:faultcode]
-        exception.detail = details[:detail]
+        if json['Envelope'] && json['Envelope']['Body']
+          body = json['Envelope']['Body']
 
-        raise exception
-      rescue Savon::HTTPError => e
-        http = e.http
+          if details = body['fault']
+            exception = Moneta::Api::RuntimeException.new(details['faultstring'])
+            exception.code = details['faultcode']
+            exception.detail = details['detail']
 
-        exception = Moneta::Api::HTTPException.new(http.body)
-        exception.code = http.code
-
-        raise exception
-      rescue HTTPI::Error => e
-        raise Moneta::Api::ConnectionException.new(e.message)
+            raise exception
+          else
+            ResponseFactory.build(body)
+          end
+        else
+          raise Moneta::Api::ConnectionException.new('Invalid response content')
+        end
+      rescue JSON::ParserError
+        raise Moneta::Api::HTTPException.new('Invalid response type')
+      rescue Faraday::Error => e
+        raise Moneta::Api::HTTPException.new(e.message)
       end
 
       def validate!(method, request)

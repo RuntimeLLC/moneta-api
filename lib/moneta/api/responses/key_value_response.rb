@@ -3,6 +3,7 @@ module Moneta
     module Responses
       class KeyValueResponse
         include Moneta::Api::DataMapper
+        include ResponsePropertyMapper
 
         property :attribute, read_only: true
 
