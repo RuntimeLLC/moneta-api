@@ -4,9 +4,7 @@ module Moneta
       # Ответ по запросу возврата средств, содержащий информацию по возвратной операции.
       # Response containing refund transaction information.
 
-      class RefundResponse < Types::OperationInfo
-        include ResponsePropertyMapper
-      end
+      class RefundResponse < Types::OperationInfo; end
     end
   end
 end

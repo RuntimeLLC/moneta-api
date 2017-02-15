@@ -4,9 +4,7 @@ module Moneta
       # Ответ на запрос проверки проведения операции в системе МОНЕТА.РУ
       # Transaction verification response.
 
-      class VerifyTransferResponse < Types::VerifyTransferResponseType
-        include ResponsePropertyMapper
-      end
+      class VerifyTransferResponse < Types::VerifyTransferResponseType; end
     end
   end
 end

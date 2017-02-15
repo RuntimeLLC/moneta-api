@@ -4,9 +4,7 @@ module Moneta
       # Ответ на запрос CancelTransactionRequest.
       # Transaction cancelation response.
 
-      class CancelTransactionResponse < Types::CancelTransactionResponseType
-        include ResponsePropertyMapper
-      end
+      class CancelTransactionResponse < Types::CancelTransactionResponseType; end
     end
   end
 end

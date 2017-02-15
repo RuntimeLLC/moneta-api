@@ -10,9 +10,7 @@ module Moneta
     # Actual values may differ if newer financial rules and currency exchange rates
     # are available at the moment of transaction processing.
 
-      class ForecastTransactionResponse < Types::ForecastTransactionResponseType
-        include ResponsePropertyMapper
-      end
+      class ForecastTransactionResponse < Types::ForecastTransactionResponseType; end
     end
   end
 end

@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://demo.moneta.ru/services
+    body:
+      encoding: UTF-8
+      string: '{"Envelope":{"Header":{"Security":{"UsernameToken":{"Username":"<USERNAME>","Password":"<PASSWORD>"}}},"Body":{"FindOperationsListRequest":{"pager":{"pageNumber":1,"pageSize":1},"filter":{"dateFrom":"2015-01-01T00:00:00+03:00","dateTo":"2015-04-13T00:00:00+03:00"}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 14 Feb 2017 15:40:38 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJFbnZlbG9wZSI6eyJCb2R5Ijp7ImZhdWx0Ijp7ImRldGFpbCI6eyJmYXVs
+        dERldGFpbCI6IjUwMC4zLjMuMyJ9LCJmYXVsdGNvZGUiOiJDbGllbnQiLCJm
+        YXVsdHN0cmluZyI6ItCc0LDQutGB0LjQvNCw0LvRjNC90YvQuSDQuNC90YLQ
+        tdGA0LLQsNC7INC/0YDQvtGB0LzQvtGC0YDQsCDQuNGB0YLQvtGA0LjQuCDQ
+        vtC/0LXRgNCw0YbQuNC5INGB0L7RgdGC0LDQstC70Y/QtdGCIDMwINC00L3Q
+        tdC5LiDQmNC30LzQtdC90LjRgtC1INC00LDRgtGDINC90LDRh9Cw0LvQsCDQ
+        uNC70Lgg0LrQvtC90YbQsCDQv9C10YDQuNC+0LTQsCDQv9GA0L7RgdC80L7R
+        gtGA0LAifX19fQ==
+    http_version: 
+  recorded_at: Tue, 14 Feb 2017 15:40:36 GMT
+recorded_with: VCR 3.0.1

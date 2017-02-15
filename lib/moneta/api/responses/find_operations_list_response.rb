@@ -6,9 +6,7 @@ module Moneta
       # Transaction searching response.
       # Result contains paged transactions list.
 
-      class FindOperationsListResponse < Types::OperationInfoList
-        include ResponsePropertyMapper
-      end
+      class FindOperationsListResponse < Types::OperationInfoList; end
     end
   end
 end

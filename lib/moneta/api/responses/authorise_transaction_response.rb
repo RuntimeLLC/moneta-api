@@ -4,9 +4,7 @@ module Moneta
       # Ответ на запрос регистрации операции.
       # Transaction authorisation response.
 
-      class AuthoriseTransactionResponse < Types::OperationInfo
-        include ResponsePropertyMapper
-      end
+      class AuthoriseTransactionResponse < Types::OperationInfo; end
     end
   end
 end

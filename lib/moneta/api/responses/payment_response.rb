@@ -4,9 +4,7 @@ module Moneta
       # Ответ на запрос перевода денежных средств.
       # Money transfer registration response.
 
-      class PaymentResponse < Types::OperationInfo
-        include ResponsePropertyMapper
-      end
+      class PaymentResponse < Types::OperationInfo; end
     end
   end
 end

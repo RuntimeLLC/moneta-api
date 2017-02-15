@@ -206,7 +206,7 @@ module Moneta
 
         response = call_method(method_id, request)
 
-        json = JSON.parse(response.body)
+        json = Oj.load(response.body)
 
         if json['Envelope'] && json['Envelope']['Body']
           body = json['Envelope']['Body']
@@ -223,7 +223,7 @@ module Moneta
         else
           raise Moneta::Api::ConnectionException.new('Invalid response content')
         end
-      rescue JSON::ParserError
+      rescue Oj::ParseError
         raise Moneta::Api::HTTPException.new('Invalid response type')
       rescue Faraday::Error => e
         raise Moneta::Api::HTTPException.new(e.message)

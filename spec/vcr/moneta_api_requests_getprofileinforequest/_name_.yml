@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://demo.moneta.ru/services
+    body:
+      encoding: UTF-8
+      string: '{"Envelope":{"Header":{"Security":{"UsernameToken":{"Username":"<USERNAME>","Password":"<PASSWORD>"}}},"Body":{"GetProfileInfoRequest":{"unitId":42868}}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 14 Feb 2017 15:40:41 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJFbnZlbG9wZSI6eyJCb2R5Ijp7IkdldFByb2ZpbGVJbmZvUmVzcG9uc2Ui
+        OnsiYXR0cmlidXRlIjpbeyJhcHByb3ZlZCI6ZmFsc2UsInZhbHVlIjoi0JzQ
+        vtC90L7QvNCw0YUiLCJrZXkiOiJsYXN0X25hbWUifSx7ImFwcHJvdmVkIjpm
+        YWxzZSwidmFsdWUiOiLQktC70LDQtNC40LzQuNGAIiwia2V5IjoiZmlyc3Rf
+        bmFtZSJ9LHsiYXBwcm92ZWQiOmZhbHNlLCJ2YWx1ZSI6IkV1cm9wZVwvTW9z
+        Y293Iiwia2V5IjoidGltZXpvbmUifSx7ImFwcHJvdmVkIjpmYWxzZSwidmFs
+        dWUiOiJjbGllbnQiLCJrZXkiOiJwcm9maWxlVHlwZSJ9LHsiYXBwcm92ZWQi
+        OmZhbHNlLCJ2YWx1ZSI6Ijc5NTIwMzQ4Njc3Iiwia2V5IjoiY2VsbF9waG9u
+        ZSJ9LHsiYXBwcm92ZWQiOmZhbHNlLCJ2YWx1ZSI6ItCc0L7QvdC+0LzQsNGF
+        INCS0LvQsNC00LjQvNC40YAiLCJrZXkiOiJuYW1lIn0seyJhcHByb3ZlZCI6
+        ZmFsc2UsInZhbHVlIjoiNDI4NjgiLCJrZXkiOiJ1bml0aWQifSx7ImFwcHJv
+        dmVkIjpmYWxzZSwidmFsdWUiOiI0MTU2MyIsImtleSI6InBhcmVudGlkIn0s
+        eyJhcHByb3ZlZCI6ZmFsc2UsInZhbHVlIjoiNDMwNTMiLCJrZXkiOiJwcm9m
+        aWxlaWQifV19fX19
+    http_version: 
+  recorded_at: Tue, 14 Feb 2017 15:40:39 GMT
+recorded_with: VCR 3.0.1

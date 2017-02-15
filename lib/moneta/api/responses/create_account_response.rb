@@ -3,7 +3,6 @@ module Moneta
     module Responses
       class CreateAccountResponse
         include Moneta::Api::DataMapper
-        include ResponsePropertyMapper
 
         # @return [String] Номер счета в системе МОНЕТА.РУ
         #   Account number

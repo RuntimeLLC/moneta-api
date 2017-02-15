@@ -7,7 +7,6 @@ module Moneta
 
       class FindAccountByAliasResponse
         include Moneta::Api::DataMapper
-        include ResponsePropertyMapper
 
         # @return [Moneta::Api::Types::AccountInfo]
         property :account, type: Moneta::Api::Types::AccountInfo

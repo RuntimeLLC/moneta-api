@@ -6,7 +6,6 @@ module Moneta
 
       class GetOperationDetailsByIdResponse
         include Moneta::Api::DataMapper
-        include ResponsePropertyMapper
 
         # @return [Moneta::Api::Types::OperationInfo]
         property :operation, type: Types::OperationInfo

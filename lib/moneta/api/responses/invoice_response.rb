@@ -4,9 +4,7 @@ module Moneta
       # Ответ на выставление счета к оплате.
       # Invoice registration response.
 
-      class InvoiceResponse < Types::TransactionResponseType
-        include ResponsePropertyMapper
-      end
+      class InvoiceResponse < Types::TransactionResponseType; end
     end
   end
 end

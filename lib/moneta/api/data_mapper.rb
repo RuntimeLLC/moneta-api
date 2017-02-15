@@ -42,21 +42,14 @@ module Moneta
 
       def fill(data)
         properties.each do |property, type|
-          data_property_name = data_property_name(property)
-
-          if data.has_key?(data_property_name)
-            value = data[data_property_name]
-
+          if data.has_key?(property)
+            value = data[property]
             property_value = type.nil? ? value : build_complex_value(type, value)
             instance_variable_set("@#{ property }", property_value)
           end
         end
 
         self
-      end
-
-      def data_property_name(property)
-        property
       end
 
       def to_hash

@@ -5,7 +5,6 @@ module Moneta
       # Response to a transaction validation request. Response in batch mode.
       class VerifyPaymentBatchResponse
         include Moneta::Api::DataMapper
-        include ResponsePropertyMapper
 
         # @return [Array[Moneta::Api::Types::VerifyTransactionResponseType]] Детали операций, либо описание ошибок. Порядок соответствует набору операций,
         #   переданных в VerifyPaymentBatchRequest.

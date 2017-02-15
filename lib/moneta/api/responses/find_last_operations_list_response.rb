@@ -6,9 +6,7 @@ module Moneta
       # Transaction searching response.
       # Result contains last transactions list.
 
-      class FindLastOperationsListResponse < Moneta::Api::Types::OperationInfoList
-        include ResponsePropertyMapper
-      end
+      class FindLastOperationsListResponse < Moneta::Api::Types::OperationInfoList; end
     end
   end
 end

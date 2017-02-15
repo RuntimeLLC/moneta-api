@@ -6,7 +6,6 @@ module Moneta
 
       class CancelTransactionBatchResponse
         include Moneta::Api::DataMapper
-        include ResponsePropertyMapper
 
         # @return [Array[Moneta::Api::Types::CancelTransactionBatchResponseType]] Детали проведенных операций, либо описание ошибок, если операция не проведена.
         #   Порядок соответствует набору операций, переданных в CancelTransactionBatchRequest.

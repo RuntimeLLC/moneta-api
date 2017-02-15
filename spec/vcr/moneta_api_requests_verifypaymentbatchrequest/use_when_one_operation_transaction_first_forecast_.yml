@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://demo.moneta.ru/services
+    body:
+      encoding: UTF-8
+      string: '{"Envelope":{"Header":{"Security":{"UsernameToken":{"Username":"<USERNAME>","Password":"<PASSWORD>"}}},"Body":{"VerifyPaymentBatchRequest":{"transactional":false,"exitOnFailure":true,"transaction":[{"payer":10999,"payee":28988504,"amount":10,"isPayerAmount":false,"paymentPassword":"12345"}]}}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 15 Feb 2017 09:50:53 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJFbnZlbG9wZSI6eyJCb2R5Ijp7IlZlcmlmeVBheW1lbnRCYXRjaFJlc3Bv
+        bnNlIjp7InRyYW5zYWN0aW9uIjpbeyJpc1RyYW5zYWN0aW9uVmFsaWQiOnRy
+        dWUsImZvcmVjYXN0Ijp7InBheWVyQWxpYXMiOiLQkNC70LjQsNGBIiwicGF5
+        ZWVGZWUiOjAsInBheWVyQ3VycmVuY3kiOiJSVUIiLCJwYXllciI6MTA5OTks
+        InBheWVlIjoyODk4ODUwNCwicGF5ZWVDdXJyZW5jeSI6IlJVQiIsInBheWVl
+        QW1vdW50IjoxMCwicGF5ZXJBbW91bnQiOjEwfX1dfX19fQ==
+    http_version: 
+  recorded_at: Wed, 15 Feb 2017 09:50:51 GMT
+recorded_with: VCR 3.0.1
