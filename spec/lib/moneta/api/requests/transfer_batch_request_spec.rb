@@ -56,7 +56,7 @@ describe Moneta::Api::Requests::TransferBatchRequest do
         ]
       end
 
-      its('transaction.transaction') { is_expected.to be_a_kind_of(Moneta::Api::Types::TransactionResponseType) }
+      its('transaction.first.transaction') { is_expected.to be_a_kind_of(Moneta::Api::Types::TransactionResponseType) }
     end
 
     context 'when two operations' do

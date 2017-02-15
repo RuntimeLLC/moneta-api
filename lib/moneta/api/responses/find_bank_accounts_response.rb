@@ -9,7 +9,7 @@ module Moneta
         property :bank_account, type: BankAccountInfo
 
         def get_account(number)
-          bank_account.detect { |account| account.id == number.to_s }
+          bank_account.detect { |account| account.id.to_s == number.to_s }
         end
       end
     end

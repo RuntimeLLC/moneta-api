@@ -44,10 +44,4 @@ RSpec.configure do |config|
     options = example.metadata.select{ |key| [ :record, :match_requests_on ].member?(key) }
     VCR.use_cassette(name, options) { example.call }
   end
-
-  config.before(:each) do
-    allow_any_instance_of(Moneta::Api::Service).to receive(:wsdl).and_return(
-      Nokogiri::XML(File.read('spec/support/wsdl'))
-    )
-  end
 end

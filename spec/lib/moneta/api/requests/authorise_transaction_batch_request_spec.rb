@@ -55,7 +55,8 @@ describe Moneta::Api::Requests::AuthoriseTransactionBatchRequest do
         ]
       end
 
-      its('transaction.transaction') { is_expected.to be_a_kind_of(Moneta::Api::Types::OperationInfo) }
+      its('transaction.count') { is_expected.to eq 1 }
+      its('transaction.first.transaction') { is_expected.to be_a_kind_of(Moneta::Api::Types::OperationInfo) }
     end
 
     context 'when two operations' do

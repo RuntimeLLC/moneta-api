@@ -1,31 +1,74 @@
 module Moneta
   module Api
     class Service
-      DEMO = 'https://demo.moneta.ru/services.wsdl'
-      PRODUCTION = 'https://www.moneta.ru/services.wsdl'
-      NAMESPACE = 'http://www.moneta.ru/schemas/messages.xsd'
+      DEMO = 'https://demo.moneta.ru'
+      PRODUCTION = 'https://www.moneta.ru'
+      URL = '/services'
 
       include ServiceMethods
-      attr_reader :client
 
       def initialize(username, password, params = {})
-        @client = Savon.client(prepare_params(username, password, params))
+        @username = username
+        @password = password
+        @connection = connection(Options.new(params))
+      end
+
+      def call_method(method_id, request)
+        @connection.post do |req|
+          req.url URL
+          req.headers['Content-Type'] = 'application/json;charset=UTF-8'
+          req.body = request_body(method_id, request).to_json
+        end
       end
 
       private
 
-      def prepare_params(username, password, params)
-        demo_mode = params.delete(:demo_mode)
+      def connection(options)
+        Faraday.new(url: endpoint(options.demo?)) do |faraday|
+          faraday.adapter :net_http do |http|
+            http.open_timeout = options.open_timeout
+          end
 
-        {
-          wsse_auth: [ username, password ],
-          wsdl: wsdl_url(demo_mode),
-          namespace: NAMESPACE
-        }.merge(params)
+          if options.logger
+            faraday.response :logger, options.logger, bodies: options.log_bodies? do | logger |
+              logger.filter(/(#{ @password })/,'[FILTERED]')
+
+              options.filter.each do |subject, replacement|
+                logger.filter(/#{ subject }/, replacement)
+              end
+            end
+          end
+        end
       end
 
-      def wsdl_url(demo_mode)
-        demo_mode ? DEMO : PRODUCTION
+      def endpoint(demo)
+        demo ? DEMO : PRODUCTION
+      end
+
+      def request_body(method_id, request)
+        {
+          'Envelope' => {
+            'Header' => {
+              'Security' => {
+                'UsernameToken' => {
+                  'Username' => @username,
+                  'Password' => @password
+                }
+              }
+            },
+            'Body' => {
+              method_name(method_id) => request_hash(request)
+            }
+          }
+        }
+      end
+
+      def method_name(method_id)
+        "#{ method_id.to_s.camelize }Request"
+      end
+
+      def request_hash(request)
+        request.respond_to?(:to_hash) ? request.to_hash : { value: request }
       end
     end
   end

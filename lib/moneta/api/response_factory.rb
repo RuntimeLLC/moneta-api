@@ -5,9 +5,21 @@ module Moneta
         # @param [Savon::Response]
         # @return [Moneta::Api::Responses::*]
         def build(response)
-          klass, data = response.to_hash.to_a.first
+          klass = response.keys.first
+          data = response.values.first
 
-          Object.const_get("Moneta::Api::Responses::#{ klass.to_s.camelize }").build(data)
+          prepare_data!(data)
+          Object.const_get("Moneta::Api::Responses::#{ klass.to_s }").build(data)
+        end
+
+        private
+
+        def prepare_data!(data)
+          if data.is_a?(Hash)
+            data.deep_transform_keys! do |key|
+              key.underscore.to_sym rescue key
+            end
+          end
         end
       end
     end

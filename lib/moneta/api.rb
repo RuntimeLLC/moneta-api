@@ -1,8 +1,11 @@
 require 'moneta/api/version'
-require 'savon'
+require 'faraday'
+require 'oj'
+require 'active_support/core_ext/hash/indifferent_access'
+require 'active_support/core_ext/string/inflections'
 
-require 'moneta/core_ext/string'
 require 'moneta/constants/withdrawal'
+require 'moneta/api/options'
 require 'moneta/api/service_methods'
 require 'moneta/api/service'
 require 'moneta/api/data_mapper'
