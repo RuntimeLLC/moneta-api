@@ -25,10 +25,6 @@ module Moneta
 
       def connection(options)
         Faraday.new(url: endpoint(options.demo?)) do |faraday|
-          faraday.adapter :net_http do |http|
-            http.open_timeout = options.open_timeout
-          end
-
           if options.logger
             faraday.response :logger, options.logger, bodies: options.log_bodies? do | logger |
               logger.filter(/(#{ @password })/,'[FILTERED]')
@@ -37,6 +33,10 @@ module Moneta
                 logger.filter(/#{ subject }/, replacement)
               end
             end
+          end
+
+          faraday.adapter :net_http do |http|
+            http.open_timeout = options.open_timeout
           end
         end
       end
