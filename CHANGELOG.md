@@ -1,6 +1,6 @@
 ## 2.0.0
 
-- Перевод взаимодействия с Moneta.ru с SOAP на JSON. Это дало прирост в скорости примерно в 3-5 раз.
+- Перевод взаимодействия с Moneta.ru с SOAP на JSON.
   
   Interaction with MONETA.RU changed from SOAP to JSON.
   
