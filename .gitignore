@@ -16,4 +16,3 @@ mkmf.log
 spec/support/moneta.yml
 .ruby-version
 .ruby-gemset
-*.p12

@@ -15,7 +15,9 @@ Dir['spec/support/**/*.rb'].each do |file|
   require File.join(File.dirname(__FILE__), '..', file)
 end
 
-config = YAML.load(File.read(File.join(Dir.pwd, 'spec/support/moneta.yml')))
+config = YAML.load(
+  ERB.new(File.read(File.join(Dir.pwd, 'spec/support/moneta.yml'))).result
+)
 
 $username = config['username']
 $password = config['password']
