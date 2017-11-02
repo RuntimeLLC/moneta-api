@@ -1,2 +1,5 @@
 username: 'username'
 password: 'password'
+
+cert_path: 'path'
+cert_pass: 'pass'

@@ -20,6 +20,9 @@ config = YAML.load(File.read(File.join(Dir.pwd, 'spec/support/moneta.yml')))
 $username = config['username']
 $password = config['password']
 
+$cert_path = config['cert_path']
+$cert_pass = config['cert_pass']
+
 class WebHelper
   def self.with_real_connection
     WebMock.allow_net_connect!
@@ -35,6 +38,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<USERNAME>') { $username }
   config.filter_sensitive_data('<PASSWORD>') { $password }
+  config.filter_sensitive_data('<CERT_PASSWORD>') { $cert_pass }
   config.ignore_hosts 'codeclimate.com'
 end
 

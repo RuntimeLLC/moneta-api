@@ -1,5 +1,6 @@
 require 'moneta/api/version'
 require 'faraday'
+require 'faraday_middleware'
 require 'oj'
 require 'active_support/core_ext/hash/indifferent_access'
 require 'active_support/core_ext/string/inflections'
@@ -122,3 +123,6 @@ require 'moneta/api/responses/approve_phone_send_confirmation_response'
 require 'moneta/api/responses/approve_phone_apply_code_response'
 
 require 'moneta/api/response_factory'
+
+require 'moneta/front/service_methods'
+require 'moneta/front/service'
