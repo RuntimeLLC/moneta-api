@@ -1,5 +1,5 @@
 username: 'username'
 password: 'password'
 
-cert_path: <%= File.join(Dir.pwd, 'spec/support/moneta-client-test.p12') %>
-cert_pass: 'password'
+cert_path: 'spec/support/moneta-cert.pem'
+cert_private_key_path: 'spec/support/moneta-private.key'

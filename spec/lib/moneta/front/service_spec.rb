@@ -1,7 +1,7 @@
 describe Moneta::Front::Service, vcr: true do
   let(:params) { { demo_mode: true } }
 
-  let(:service) { described_class.new($cert_path, $cert_pass, params) }
+  let(:service) { described_class.new($cert, $cert_private_key, params) }
 
   describe '#request' do
     subject { service.request(path) }
@@ -20,7 +20,7 @@ describe Moneta::Front::Service, vcr: true do
   end
 
   describe '#get_invoice_pdf' do
-    subject { service.get_invoice_pdf(operation_id: 467339) }
+    subject { service.get_receipt_pdf(467339) }
 
     context 'when success request' do
       let(:operation_id) { 467339 }

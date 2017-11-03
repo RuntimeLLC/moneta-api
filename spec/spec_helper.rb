@@ -15,15 +15,16 @@ Dir['spec/support/**/*.rb'].each do |file|
   require File.join(File.dirname(__FILE__), '..', file)
 end
 
-config = YAML.load(
-  ERB.new(File.read(File.join(Dir.pwd, 'spec/support/moneta.yml'))).result
-)
+config = YAML.load(File.read(File.join(Dir.pwd, 'spec/support/moneta.yml')))
+
+cert_path = File.join(Dir.pwd, config['cert_path'])
+cert_private_key_path = File.join(Dir.pwd, config['cert_private_key_path'])
 
 $username = config['username']
 $password = config['password']
 
-$cert_path = config['cert_path']
-$cert_pass = config['cert_pass']
+$cert = OpenSSL::X509::Certificate.new(File.read(cert_path))
+$cert_private_key = OpenSSL::PKey::RSA.new(File.read(cert_private_key_path))
 
 class WebHelper
   def self.with_real_connection

@@ -6,6 +6,7 @@ require 'active_support/core_ext/hash/indifferent_access'
 require 'active_support/core_ext/string/inflections'
 
 require 'moneta/constants/withdrawal'
+require 'moneta/constants/settings'
 require 'moneta/api/options'
 require 'moneta/api/service_methods'
 require 'moneta/api/service'

@@ -3,13 +3,15 @@ require 'moneta/api/options'
 module Moneta
   module Front
     class Service
-      DEMO = 'https://demo.moneta.ru/x509'
-      PRODUCTION = 'https://www.moneta.ru/x509'
+      DEMO = Moneta::Constants::Settings::DEMO
+      PRODUCTION = Moneta::Constants::Settings::PRODUCTION
+      PATH = Moneta::Constants::Settings::CERTIFICATE_PATH
 
       include ServiceMethods
 
-      def initialize(p12_cert_path, p12_cert_password, params = {})
-        @p12 = OpenSSL::PKCS12.new(File.read(p12_cert_path), p12_cert_password)
+      def initialize(certificate, key, params = {})
+        @certificate = certificate
+        @key = key
         @connection = connection(Moneta::Api::Options.new(params))
       end
 
@@ -38,11 +40,11 @@ module Moneta
       end
 
       def endpoint(demo)
-        demo ? DEMO : PRODUCTION
+        (demo ? DEMO : PRODUCTION) + PATH
       end
 
       def ssl_options
-        { client_cert: @p12.certificate, client_key: @p12.key, verify: false }
+        { client_cert: @certificate, client_key: @key, verify: false }
       end
     end
   end
