@@ -24,7 +24,7 @@ $username = config['username']
 $password = config['password']
 
 $cert = OpenSSL::X509::Certificate.new(File.read(cert_path))
-$cert_private_key = OpenSSL::PKey::RSA.new(File.read(cert_private_key_path))
+$cert_private_key = OpenSSL::PKey::RSA.new(File.read(cert_private_key_path), config['private_key_password'])
 
 class WebHelper
   def self.with_real_connection
