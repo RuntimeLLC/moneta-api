@@ -125,5 +125,6 @@ require 'moneta/api/responses/approve_phone_apply_code_response'
 
 require 'moneta/api/response_factory'
 
+require 'moneta/front/http_exception'
 require 'moneta/front/service_methods'
 require 'moneta/front/service'
