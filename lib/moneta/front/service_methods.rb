@@ -1,8 +1,6 @@
 module Moneta
   module Front
     module ServiceMethods
-      # @param [operation_id:]
-      # @return [page]
       def get_receipt_pdf(operation_id)
         url = "report/receipt.htm?operationId=#{operation_id}&format=pdf"
 
