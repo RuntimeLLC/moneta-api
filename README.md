@@ -146,9 +146,9 @@ gem 'moneta-api'
   require 'moneta/api'
 
   certificate = OpenSSL::X509::Certificate.new(File.read('cert_path'))
-  privat_key = OpenSSL::PKey::RSA.new(File.read('key_path'), 'password')
+  private_key = OpenSSL::PKey::RSA.new(File.read('key_path'), 'password')
 
-  service = Moneta::Front::Service.new(certificate, privat_key, { demo_mode: true })
+  service = Moneta::Front::Service.new(certificate, private_key, { demo_mode: true })
 
   service.get_receipt_pdf(468398)
   # => 'PDF файл'
@@ -157,14 +157,14 @@ gem 'moneta-api'
 **Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Front/ServiceMethods), с помощью которых вы можете обратиться к интефейсу moneta.ru**
 
 ### Настройки
-**Для работы с интерфейсом монеты понадобиться получение сертификатов, получение подробно описано в MONETA.MerchantAPI.v2**
+**Для работы с интерфейсом монеты понадобиться получение сертификатов, получение подробно описано в [MONETA.MerchantAPI.v2](https://www.moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf)**
 
 Параметры:
 
  Название                  | Описание
 ---------------------------|:----------------------------------------------
 `certificate`              | Сертификат пользователя полученный от монеты.
-`privat_key`               | Приватный ключ сгенерированный пользователем.
+`private_key`              | Приватный ключ сгенерированный пользователем.
 `:demo_mode`               | Выполнение операций на демо стенде.
 `:open_timeout`            | Таймаут подключения.
 `:filter`                  | Настройка фильтрации содержимого лога.
@@ -173,7 +173,7 @@ gem 'moneta-api'
 Для использования тестового сервера (http://demo.moneta.ru) следует инициализировать сервис со специальным флагом
 
 ```ruby
-  Moneta::Front::Service.new(certificate, privat_key, { demo_mode: true })
+  Moneta::Front::Service.new(certificate, private_key, { demo_mode: true })
 ```
 
 ## Contributing
