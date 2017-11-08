@@ -1,9 +1,9 @@
 module Moneta
   module Api
     class Service
-      DEMO = 'https://demo.moneta.ru'
-      PRODUCTION = 'https://www.moneta.ru'
-      URL = '/services'
+      DEMO = Moneta::Constants::Settings::DEMO
+      PRODUCTION = Moneta::Constants::Settings::PRODUCTION
+      URL = Moneta::Constants::Settings::SERVICES_PATH
 
       include ServiceMethods
 

@@ -39,8 +39,11 @@ gem 'moneta-api'
     $ gem install moneta-api
 
 ## Использование
+Есть несколько вариантов работы с сервисами монеты:
+1. API - работа происходит с использованием методов описанных в MONETA.MerchantAPI.v2
+2. FRONT - работа происходит напрямую с интерфейсом монеты.
 
-### Примеры
+### Примеры работы c API
 
 #### Получить данные счета
 
@@ -135,10 +138,48 @@ gem 'moneta-api'
   Moneta::Api::Service.new('username', 'password', { demo_mode: true })
 ```
 
+
+### Примеры работы с FRONT (интерфейс монеты)
+
+#### Получить квинтанцию оплаты в формате PDF
+```ruby
+  require 'moneta/api'
+
+  certificate = OpenSSL::X509::Certificate.new(File.read('cert_path'))
+  private_key = OpenSSL::PKey::RSA.new(File.read('key_path'), 'password')
+
+  service = Moneta::Front::Service.new(certificate, private_key, { demo_mode: true })
+
+  service.get_receipt_pdf(468398)
+  # => 'PDF файл'
+```
+
+**Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Front/ServiceMethods), с помощью которых вы можете обратиться к интефейсу moneta.ru**
+
+### Настройки
+**Для работы с интерфейсом монеты понадобиться получение сертификатов, получение подробно описано в [MONETA.MerchantAPI.v2](https://www.moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf)**
+
+Параметры:
+
+ Название                  | Описание
+---------------------------|:----------------------------------------------
+`certificate`              | Сертификат пользователя, полученный от монеты.
+`private_key`              | Приватный ключ, сгенерированный пользователем.
+`:demo_mode`               | Выполнение операций на демо стенде.
+`:open_timeout`            | Таймаут подключения.
+`:filter`                  | Настройка фильтрации содержимого лога.
+
+#### Demo режим
+Для использования тестового сервера (http://demo.moneta.ru) следует инициализировать сервис со специальным флагом
+
+```ruby
+  Moneta::Front::Service.new(certificate, private_key, { demo_mode: true })
+```
+
 ## Contributing
 
 1. Стандартная схема с pull-request workflow
 2. Для локального запуска тестов необходимо создать конфигурационный файл со своими demo доступами
 ```bash
-  echo "username: 'username'\npassword: 'password'" > spec/support/moneta.yml
+  cp spec/support/moneta.example.yml spec/support/moneta.yml
 ```

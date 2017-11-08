@@ -1,2 +1,6 @@
 username: 'username'
 password: 'password'
+
+cert_path: 'spec/support/moneta-certificate.pem'
+cert_private_key_path: 'spec/support/moneta-private.key'
+private_key_password:
