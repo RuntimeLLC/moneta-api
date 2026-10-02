@@ -4,7 +4,7 @@
 [![Test Coverage](https://codeclimate.com/github/ssnikolay/moneta-api/badges/coverage.svg)](https://codeclimate.com/github/ssnikolay/moneta-api)
 [![Inline docs](http://inch-ci.org/github/ssnikolay/moneta-api.svg?branch=master)](http://inch-ci.org/github/ssnikolay/moneta-api)
 
-[Описание MerchantAPI](https://www.moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf) | [RDoc](http://www.rubydoc.info/gems/moneta-api) |
+[Описание MerchantAPI](https://moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf) | [RDoc](http://www.rubydoc.info/gems/moneta-api) |
 [Список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Api/ServiceMethods)
 
 # moneta-api
@@ -18,8 +18,8 @@
 - v1 работает с Moneta.ru при помощи SOAP, v2 при помощи JSON.
 - В v1 числа являются строками, в v2 числами (например, значения `id`).
 - Изменились настройки фильтрации, добавилась настройка `log_body`, убрались `log`, `pretty_print_xml`
-- В аттрибутах ключ-значение (например, результат `FindBankAccounts`), значение всегда строка. 
-  Поэтому например значение поля `is_international` будет строка `"false"`, а не Boolean `false`. 
+- В аттрибутах ключ-значение (например, результат `FindBankAccounts`), значение всегда строка.
+  Поэтому например значение поля `is_international` будет строка `"false"`, а не Boolean `false`.
   Это связано с особенностями работы с Moneta.ru при помощи JSON.
 
 ## Установка
@@ -157,7 +157,7 @@ gem 'moneta-api'
 **Полный [список методов](http://www.rubydoc.info/gems/moneta-api/Moneta/Front/ServiceMethods), с помощью которых вы можете обратиться к интефейсу moneta.ru**
 
 ### Настройки
-**Для работы с интерфейсом монеты понадобиться получение сертификатов, получение подробно описано в [MONETA.MerchantAPI.v2](https://www.moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf)**
+**Для работы с интерфейсом монеты понадобиться получение сертификатов, получение подробно описано в [MONETA.MerchantAPI.v2](https://moneta.ru/doc/MONETA.MerchantAPI.v2.ru.pdf)**
 
 Параметры:
 
