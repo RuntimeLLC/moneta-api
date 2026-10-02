@@ -34,7 +34,7 @@ describe Moneta::Api::Service do
     context 'when demo mode' do
       let(:params) { {} }
 
-      its(:host) { is_expected.to eq 'www.moneta.ru' }
+      its(:host) { is_expected.to eq 'moneta.ru' }
     end
   end
 
